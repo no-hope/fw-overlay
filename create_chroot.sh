@@ -11,7 +11,7 @@ set -o pipefail
 REPO_DIR="$(pwd)"
 echo "REPO_DIR=${REPO_DIR}"
 
-git fetch
+git fetch origin
 git checkout -t origin/master
 git pull origin master
 git merge develop
