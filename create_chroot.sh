@@ -34,6 +34,7 @@ mount -t sysfs none gentoo/sys
 mkdir gentoo/repo
 mount -o bind "${REPO_DIR}" gentoo/repo
 
+cp -L /etc/resolv.conf gentoo/etc/resolv.conf
 chroot gentoo emerge-webrsync -q
 chroot gentoo emerge --quiet --sync
 
