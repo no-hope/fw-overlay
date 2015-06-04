@@ -14,6 +14,7 @@ echo "REPO_DIR=${REPO_DIR}"
 git config user.email "travis@no-hope.org"
 git config user.name "Travis CI"
 git config remote.origin.url "$(git config --get remote.origin.url | sed "s|git://|https://${GH_TOKEN}@|")"
+git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 git fetch origin master
 git checkout -t origin/master
@@ -49,8 +50,11 @@ rm -rf "${TMP_GENTOO}"
 
 cd ${REPO_DIR}
 
-if [[ "$(git diff)" == "" ]]; then
-    git add -f .
+git add -f .
+changed="$(git diff --name-only --diff-filter=A HEAD)"
+if [[ "${changed}" != "" ]]; then
     git commit -m "[auto-generated] cache update"
     git push -q origin master
+else
+    echo "Nothing was changed!"
 fi
