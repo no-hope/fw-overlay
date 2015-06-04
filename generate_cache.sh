@@ -6,7 +6,7 @@ DIR="$(
 
 if [[ $USER != "root" ]]; then
     sudo -n echo >/dev/null 2>&1 || echo "You must be a root to continue!" >&2
-    sudo $0 $@
+    sudo -E $0 $@
     exit $?
 fi
 

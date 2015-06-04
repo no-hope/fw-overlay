@@ -53,7 +53,7 @@ rm -rf "${TMP_GENTOO}"
 cd ${REPO_DIR}
 
 git add -f .
-changed="$(git diff --name-only --diff-filter=A HEAD)"
+changed="$(git diff --name-only HEAD)"
 if [[ "${changed}" != "" ]]; then
     git commit -m "[auto-generated] cache update"
     git push -q origin master
