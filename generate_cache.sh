@@ -4,35 +4,41 @@ DIR="$(
     dirname "$(readlink -f "$0")"
 )"
 
+if [[ $USER != "root" ]]; then
+    sudo -n echo >/dev/null 2>&1 || echo "You must be a root to continue!" >&2
+    sudo $0 $@
+    exit $?
+fi
+
+if [[ "${SUDO_USER}" == "" ]]; then
+    echo "Script requires to be run as normal user with sudo :-)" >&2
+    exit 1
+fi
+
 cd "${DIR}"
 
 CACHE_DIR="${DIR}/metadata/md5-cache"
 REPO_NAME="$(cat ${DIR}/profiles/repo_name)"
 
 CONFIG=$(cat << EOF
-    [DEFAULT]
-    main-repo=gentoo
+[DEFAULT]
+main-repo=gentoo
 
-    [gentoo]
-    location = /usr/portage
+[gentoo]
+location = /usr/portage
 
-    [${REPO_NAME}]
-    location=$(pwd)
+[${REPO_NAME}]
+location=$(pwd)
 EOF
 )
 
-# tmp cache in /var/tmp to not to require root privileges
-# also this dir is not removed because it can drastically
-# improve egencache performance
-TMP_CACHE="/tmp/${REPO_NAME}-cache"
+echo "config ->"
+echo "${CONFIG}"
 
-mkdir -p "${TMP_CACHE}"
 [[ -d ${CACHE_DIR} ]] && rm -rf ${CACHE_DIR}
 egencache \
     --repositories-configuration="${CONFIG}" \
-    --cache-dir="${TMP_CACHE}" \
+    --jobs="$(($(nproc) + 1))" \
     --repo="${REPO_NAME}" \
     --update \
     --update-manifests
-
-#rm -rf "${TMP_CACHE}"

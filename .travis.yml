@@ -1,0 +1,5 @@
+env: LC_ALL=C
+before_script:
+  - sudo -E bash create_chroot.sh
+script:
+  - echo success
