@@ -43,10 +43,8 @@ chroot gentoo emerge --quiet --sync
 
 chroot gentoo bash /repo/generate_cache.sh
 
-umount gentoo/repo
-umount gentoo/sys
-umount gentoo/proc
-umount gentoo/dev
+cd gentoo
+umount repo sys proc dev
 
 rm -rf "${TMP_GENTOO}"
 
@@ -54,6 +52,8 @@ cd ${REPO_DIR}
 
 git add -f .
 changed="$(git diff --name-only HEAD)"
+
+echo
 if [[ "${changed}" != "" ]]; then
     git commit -m "[auto-generated] cache update"
     git push -q origin master
