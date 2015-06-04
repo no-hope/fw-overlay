@@ -18,6 +18,9 @@ mount -t sysfs none gentoo/sys
 mkdir gentoo/repo
 mount -o bind "${REPO_DIR}" gentoo/repo
 
+chroot gentoo emerge-webrsync -q
+chroot gentoo emerge --quiet --sync
+
 chroot gentoo bash /repo/generate_cache.sh
 
 umount gentoo/repo
