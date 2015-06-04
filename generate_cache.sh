@@ -4,17 +4,6 @@ DIR="$(
     dirname "$(readlink -f "$0")"
 )"
 
-if [[ $USER != "root" ]]; then
-    sudo -n echo >/dev/null 2>&1 || echo "You must be a root to continue!" >&2
-    sudo -E $0 $@
-    exit $?
-fi
-
-if [[ "${SUDO_USER}" == "" ]]; then
-    echo "Script requires to be run as normal user with sudo :-)" >&2
-    exit 1
-fi
-
 cd "${DIR}"
 
 CACHE_DIR="${DIR}/metadata/md5-cache"
@@ -28,7 +17,7 @@ main-repo=gentoo
 location = /usr/portage
 
 [${REPO_NAME}]
-location=$(pwd)
+location=${DIR}
 EOF
 )
 
