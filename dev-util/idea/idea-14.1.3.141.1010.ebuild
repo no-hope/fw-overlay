@@ -11,7 +11,7 @@ RESTRICT="strip mirror"
 QA_TEXTRELS="opt/${P}/bin/libbreakgen.so"
 
 DESCRIPTION="IntelliJ IDEA is an intelligent Java IDE"
-HOMEPAGE="http://jetbrains.com/idea/"
+HOMEPAGE="https://jetbrains.com/idea/"
 
 VER=($(get_all_version_components))
 if [[ "${VER[4]}" == "0" ]]; then
