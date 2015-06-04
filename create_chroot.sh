@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ "${TRAVIS_BRANCH}" != "develop" || "${TRAVIS_PULL_REQUEST}" != "false" ]]; then
+    echo "Skipping build for branch '${TRAVIS_BRANCH}'"
+    exit 0
+fi
+
 set -eu
 set -o pipefail
 

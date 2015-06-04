@@ -1,5 +1,5 @@
 env: LC_ALL=C
 before_script:
-  - [[ "${TRAVIS_BRANCH}" == "develop" && "${TRAVIS_PULL_REQUEST}" == "false" ]] && sudo bash create_chroot.sh
+  - sudo bash create_chroot.sh
 script:
-  - echo "finished!"
+  - echo success
