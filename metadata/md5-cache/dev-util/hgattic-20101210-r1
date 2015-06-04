@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst postrm prepare setup
+DEPEND==dev-lang/python-2* =dev-lang/python-2*[threads]
+DESCRIPTION=Patch shelve support for Mercurial
+EAPI=3
+HOMEPAGE=http://mercurial.selenic.com/wiki/AtticExtension
+KEYWORDS=amd64 x86
+LICENSE=GPL-2
+RDEPEND=dev-vcs/mercurial =dev-lang/python-2* =dev-lang/python-2*[threads]
+SLOT=0
+SRC_URI=http://bitbucket.org/Bill_Barry/hgattic/get/3ba1e5f03971.tar.bz2
+_eclasses_=distutils	92e738ea29389cb3f34778d7a349ac71	multilib	62927b3db3a589b0806255f3a002d5d3	python	3a270b7b1d1e679847ff0faeac25c5a3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=fcf56e7e111e9cfc64f34e34e9ae9db3

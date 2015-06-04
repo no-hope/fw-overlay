@@ -1,0 +1,11 @@
+DEFINED_PHASES=install postinst
+DESCRIPTION=JonDo, formerly JAP, is the ip changer proxy tool
+HOMEPAGE=http://anonymous-proxy-servers.net/en/jondo.html
+KEYWORDS=~x86 ~amd64
+LICENSE=jap
+RDEPEND=>=virtual/jdk-1.6
+RESTRICT=strip
+SLOT=9999
+SRC_URI=http://anonymous-proxy-servers.net/downloads/jondo_linux.tar.bz2
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=65bfec09b9799d183ac75030d13697a2

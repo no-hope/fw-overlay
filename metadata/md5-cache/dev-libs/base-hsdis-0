@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DEPEND=>=virtual/jdk-1.6
+DESCRIPTION=Basic disassembler plugin for HotSpot
+EAPI=5
+HOMEPAGE=https://kenai.com/projects/base-hsdis/
+KEYWORDS=amd64
+LICENSE=cc-by-3.0
+RDEPEND=>=virtual/jre-1.6 >=app-admin/eselect-1.4.4
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://kenai.com/projects/base-hsdis/downloads/download/linux-hsdis-amd64.so
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=7bfc77083c846446ed6ed7146bac37f0

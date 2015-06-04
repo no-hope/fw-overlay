@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=JD-GUI is a standalone graphical utility that displays Java source codes of ".class" files
+HOMEPAGE=https://github.com/java-decompiler/jd-gui
+KEYWORDS=~x86 ~amd64
+RDEPEND=>=virtual/jdk-1.6
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/java-decompiler/jd-gui/releases/download/v1.0.0/jd-gui-1.0.0.jar
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=c2d7c645df2d0046d26d52a1e1e65d19

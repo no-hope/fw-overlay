@@ -1,0 +1,12 @@
+DEFINED_PHASES=install
+DESCRIPTION=GUI for Perforce version control system
+EAPI=2
+HOMEPAGE=http://www.perforce.com/
+IUSE=gtk
+KEYWORDS=-* ~x86 ~amd64
+LICENSE=perforce
+RESTRICT=mirror strip test
+SLOT=0
+SRC_URI=x86? ( ftp://ftp.perforce.com/perforce/r10.1/bin.linux26x86/p4v.tgz -> perforce-gui-2010.1.276058-x86.tgz ) amd64? ( ftp://ftp.perforce.com/perforce/r10.1/bin.linux26x86_64/p4v.tgz -> perforce-gui-2010.1.276058-amd64.tgz )
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=d856b41df0ff50abb9ea704dbc0a153e

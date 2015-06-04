@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst preinst prepare setup unpack
+DEPEND=app-arch/unzip >=dev-java/java-config-2.2.0
+DESCRIPTION=High-performance, extensible and a fully interactive Flash media server.
+EAPI=2
+HOMEPAGE=http://www.wowzamedia.com
+IUSE=doc examples elibc_FreeBSD
+KEYWORDS=~amd64 ~x86
+LICENSE=WowzaMediaServerEULA-2.0
+RDEPEND=>=virtual/jre-1.6 dev-java/bcprov:0 dev-java/commons-lang:2.1 dev-java/log4j:0 >=dev-java/java-config-2.2.0
+SLOT=0
+SRC_URI=http://www.wowzamedia.com/downloads/WowzaMediaServer-2-0-0/WowzaMediaServer-2.0.0.tar.bin http://www.wowzamedia.com/downloads/WowzaMediaServer-2-0-0/WowzaMediaServer2.0.0-patch15.zip
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	java-pkg-2	d562d1b6cbce43112feccc8b7632f1bf	java-utils-2	4a7c80c1feba48616b58c79d977e084c	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=82adcad717823a26d6e8c26701f31dd6

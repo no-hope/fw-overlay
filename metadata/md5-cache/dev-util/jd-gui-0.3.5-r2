@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=JD-GUI is a standalone graphical utility that displays Java source codes of ".class" files
+HOMEPAGE=http://java.decompiler.free.fr/?q=jdgui
+KEYWORDS=~x86 ~amd64
+RDEPEND=>=virtual/jdk-1.6 >=app-emulation/emul-linux-x86-gtklibs-20131008
+RESTRICT=strip
+SLOT=0
+SRC_URI=http://jd.benow.ca/jd-gui/downloads/jd-gui-0.3.5.linux.i686.tar.gz
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=526423aebb0b3b969d3af755e4974207

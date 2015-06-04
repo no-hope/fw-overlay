@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Telegram Desktop Messenger (unofficial client), DEV version
+EAPI=5
+HOMEPAGE=https://tdesktop.com/
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-3
+RESTRICT=mirror
+SLOT=0
+SRC_URI=amd64? ( https://updates.tdesktop.com/tlinux/tsetup.0.8.17.tar.xz -> telegram-0.8.17.tar.xz ) x86? ( https://updates.tdesktop.com/tlinux32/tsetup32.0.8.17.tar.xz -> telegram32-0.8.17.tar.xz )
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=0c258f1315a1d207d48479093f19e166
