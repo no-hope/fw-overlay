@@ -8,7 +8,7 @@ OVERLAY_DIR="$(readlink -f $(dirname $0)/..)"
 cd "${OVERLAY_DIR}"
 
 CACHE_DIR="${OVERLAY_DIR}/metadata/md5-cache"
-OVERLAY_NAME="$(cat ${DIR}/profiles/repo_name)"
+OVERLAY_NAME="$(cat ${OVERLAY_DIR}/profiles/repo_name)"
 
 CONFIG=$(cat << EOF
 [DEFAULT]
