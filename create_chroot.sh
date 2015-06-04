@@ -51,4 +51,4 @@ cd ${REPO_DIR}
 
 git add -f .
 git commit -m "[auto-generated] cache update"
-git push github-https master
+git push -q github-https master
