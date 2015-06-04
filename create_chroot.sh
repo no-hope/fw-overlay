@@ -32,6 +32,8 @@ tar xpf stage3.tar.bz2 -C gentoo
 mount -o bind /dev gentoo/dev
 mount -t proc none gentoo/proc
 mount -t sysfs none gentoo/sys
+
+mkdir -p gentoo/usr/portage
 mkdir gentoo/repo
 mount -o bind "${REPO_DIR}" gentoo/repo
 

@@ -32,9 +32,6 @@ location=$(pwd)
 EOF
 )
 
-echo "config ->"
-echo "${CONFIG}"
-
 [[ -d ${CACHE_DIR} ]] && rm -rf ${CACHE_DIR}
 egencache \
     --repositories-configuration="${CONFIG}" \
