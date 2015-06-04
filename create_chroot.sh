@@ -13,10 +13,10 @@ echo "REPO_DIR=${REPO_DIR}"
 
 git config user.email "travis@no-hope.org"
 git config user.name "Travis CI"
+git config remote.origin.url "$(git config --get remote.origin.url | sed "s|git://|https://${GH_TOKEN}@|")"
 
-git remote add github-https $(git config --get remote.origin.url | sed "s|git://|https://${GH_TOKEN}@|")
-git fetch github-https master
-git checkout -t github-https/master
+git fetch origin master
+git checkout -t origin/master
 git merge --no-ff --no-edit develop
 
 TMP_GENTOO="/tmp/fw-gentoo-$(date +%s)"
@@ -49,6 +49,8 @@ rm -rf "${TMP_GENTOO}"
 
 cd ${REPO_DIR}
 
-git add -f .
-git commit -m "[auto-generated] cache update"
-git push -q github-https master
+if [[ "$(git diff)" == "" ]]; then
+    git add -f .
+    git commit -m "[auto-generated] cache update"
+    git push -q origin master
+fi
