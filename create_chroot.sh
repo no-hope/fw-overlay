@@ -11,6 +11,9 @@ set -o pipefail
 REPO_DIR="$(pwd)"
 echo "REPO_DIR=${REPO_DIR}"
 
+git config user.email "travis@no-hope.org"
+git config user.name "Travis CI"
+
 git remote add github-https $(git config --get remote.origin.url | sed "s|git://|https://${GH_TOKEN}@|")
 git fetch github-https master
 git checkout -t github-https/master
