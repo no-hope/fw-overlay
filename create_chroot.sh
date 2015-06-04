@@ -11,10 +11,9 @@ set -o pipefail
 REPO_DIR="$(pwd)"
 echo "REPO_DIR=${REPO_DIR}"
 
-git fetch origin
-git checkout -t origin/master
-git pull origin master
-git merge develop
+git remote add github-https $(git config --get remote.origin.url | sed "s|git://|https://${GH_TOKEN}@|")
+git checkout -t github-https/master
+git merge --no-ff --no-edit develop
 
 TMP_GENTOO="/tmp/fw-gentoo-$(date +%s)"
 mkdir -p "${TMP_GENTOO}"
@@ -47,4 +46,4 @@ cd ${REPO_DIR}
 
 git add -f .
 git commit -m "[auto-generated] cache update"
-git push origin master
+git push github-https master
