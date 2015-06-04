@@ -1,5 +1,5 @@
 env: LC_ALL=C
 before_script:
-  - sudo bash create_chroot.sh
+  - [[ "${TRAVIS_BRANCH}" == "develop" && "${TRAVIS_PULL_REQUEST}" == "false" ]] && sudo bash create_chroot.sh
 script:
-  - sudo chroot gentoo ls -la
+  - echo "finished!"
