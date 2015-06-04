@@ -12,6 +12,7 @@ REPO_DIR="$(pwd)"
 echo "REPO_DIR=${REPO_DIR}"
 
 git remote add github-https $(git config --get remote.origin.url | sed "s|git://|https://${GH_TOKEN}@|")
+git fetch github-https master
 git checkout -t github-https/master
 git merge --no-ff --no-edit develop
 
