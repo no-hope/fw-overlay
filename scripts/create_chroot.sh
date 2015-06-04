@@ -8,8 +8,7 @@ fi
 set -eu
 set -o pipefail
 
-REPO_DIR="$(pwd)"
-echo "REPO_DIR=${REPO_DIR}"
+OVERLAY_DIR="$(readlink -f $(dirname $0)/..)"
 
 git config user.email "travis@no-hope.org"
 git config user.name "Travis CI"
@@ -35,13 +34,13 @@ mount -t sysfs none gentoo/sys
 
 mkdir -p gentoo/usr/portage
 mkdir gentoo/repo
-mount -o bind "${REPO_DIR}" gentoo/repo
+mount -o bind "${OVERLAY_DIR}" gentoo/repo
 
 cp -L /etc/resolv.conf gentoo/etc/resolv.conf
 chroot gentoo emerge-webrsync -q
 chroot gentoo emerge --quiet --sync
 
-chroot gentoo bash /repo/generate_cache.sh
+chroot gentoo bash /repo/scripts/generate_cache.sh
 
 cd gentoo
 umount repo sys proc dev
