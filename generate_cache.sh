@@ -21,16 +21,19 @@ CACHE_DIR="${DIR}/metadata/md5-cache"
 REPO_NAME="$(cat ${DIR}/profiles/repo_name)"
 
 CONFIG=$(cat << EOF
-    [DEFAULT]
-    main-repo=gentoo
+[DEFAULT]
+main-repo=gentoo
 
-    [gentoo]
-    location = /usr/portage
+[gentoo]
+location = /usr/portage
 
-    [${REPO_NAME}]
-    location=$(pwd)
+[${REPO_NAME}]
+location=$(pwd)
 EOF
 )
+
+echo "config ->"
+echo "${CONFIG}"
 
 [[ -d ${CACHE_DIR} ]] && rm -rf ${CACHE_DIR}
 egencache \
@@ -39,8 +42,3 @@ egencache \
     --repo="${REPO_NAME}" \
     --update \
     --update-manifests
-
-# fix permissions
-user="${SUDO_USER}"
-chown -R "${user}":"${user}" ${CACHE_DIR}
-chown "${user}":"${user}" ${DIR}/profiles/use.local.desc

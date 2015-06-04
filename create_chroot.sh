@@ -17,6 +17,12 @@ mount -t proc none gentoo/proc
 mount -t sysfs none gentoo/sys
 mkdir gentoo/repo
 mount -o bind "${REPO_DIR}" gentoo/repo
+
 chroot gentoo bash /repo/generate_cache.sh
+
+umount gentoo/repo
+umount gentoo/sys
+umount gentoo/proc
+umount gentoo/dev
 
 rm -rf "${TMP_GENTOO}"
