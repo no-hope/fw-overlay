@@ -6,7 +6,7 @@ Yet another overlay full of very useful ebuilds :-)
 
 ##Developer guile##
 
-To avoid naming clash with existing `fw-overlay` instance you may follow next steps:
+Development allowed for `development` branch only. To avoid naming clash with existing `fw-overlay` instance you may follow next steps:
 
     # git clone git@github.com:no-hope/fw-overlay.git
     # cd fw-overlay
