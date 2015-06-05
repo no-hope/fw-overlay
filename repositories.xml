@@ -4,12 +4,12 @@
   <repo quality="experimental" status="unofficial">
     <name><![CDATA[fw-overlay]]></name>
     <description><![CDATA[fw-overlay experimental overlay]]></description>
-    <homepage>http://github.com/FeiWongReed/fw-overlay/tree/master</homepage>
+    <homepage>http://github.com/no-hope/fw-overlay/tree/master</homepage>
     <owner>
       <email>ketoth.xupack@gmail.com</email>
       <name><![CDATA[Ketoth Xupack]]></name>
     </owner>
     <source type="git">git://github.com/FeiWongReed/fw-overlay.git</source>
-    <feed>http://github.com/feeds/FeiWongReed/fw-overlay/master</feed>
+    <feed>http://github.com/feeds/no-hope/fw-overlay/master</feed>
   </repo>
 </repositories>
