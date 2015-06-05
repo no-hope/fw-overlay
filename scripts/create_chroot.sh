@@ -46,6 +46,7 @@ cp -L /etc/resolv.conf gentoo/etc/resolv.conf
 chroot gentoo emerge-webrsync -q
 chroot gentoo emerge --quiet --sync
 
+echo
 echo "Generating cache..."
 chroot gentoo bash /repo/scripts/generate_cache.sh
 
