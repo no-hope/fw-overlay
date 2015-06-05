@@ -1,13 +1,14 @@
 #!/bin/bash
 
-DIR="$(
-    dirname "$(readlink -f "$0")"
-)"
+set -eu
+set -o pipefail
 
-cd "${DIR}"
+OVERLAY_DIR="$(readlink -f $(dirname $0)/..)"
 
-CACHE_DIR="${DIR}/metadata/md5-cache"
-REPO_NAME="$(cat ${DIR}/profiles/repo_name)"
+cd "${OVERLAY_DIR}"
+
+CACHE_DIR="${OVERLAY_DIR}/metadata/md5-cache"
+OVERLAY_NAME="$(cat ${OVERLAY_DIR}/profiles/repo_name)"
 
 CONFIG=$(cat << EOF
 [DEFAULT]
@@ -16,8 +17,8 @@ main-repo=gentoo
 [gentoo]
 location = /usr/portage
 
-[${REPO_NAME}]
-location=${DIR}
+[${OVERLAY_NAME}]
+location=${OVERLAY_DIR}
 EOF
 )
 
@@ -25,6 +26,6 @@ EOF
 egencache \
     --repositories-configuration="${CONFIG}" \
     --jobs="$(($(nproc) + 1))" \
-    --repo="${REPO_NAME}" \
+    --repo="${OVERLAY_NAME}" \
     --update \
     --update-manifests

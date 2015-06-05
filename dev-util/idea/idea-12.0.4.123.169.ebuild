@@ -11,7 +11,7 @@ RESTRICT="strip mirror"
 QA_TEXTRELS="opt/${P}/bin/libbreakgen.so"
 
 DESCRIPTION="IntelliJ IDEA is an intelligent Java IDE"
-HOMEPAGE="http://jetbrains.com/idea/"
+HOMEPAGE="https://jetbrains.com/idea/"
 SRC_URI="http://download.jetbrains.com/${PN}/${PN}IU-$(get_version_component_range 1-3).tar.gz"
 
 LICENSE="IntelliJ-IDEA"
