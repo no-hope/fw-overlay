@@ -14,3 +14,5 @@ To avoid naming clash with existing `fw-overlay` instance you may follow next st
     # echo 'fw-overlay-dev' > profiles/repo_name
     # sudo ln -s "$(pwd)" /usr/local/portage/fw-overlay-dev
     # sudo echo 'PORTDIR_OVERLAY="${PORTDIR_OVERLAY} /usr/local/portage/fw-overlay-dev"' >> /etc/portage/make.conf
+
+To speed-up developer `eix-update` you need to periodically run `sudo scripts/generate_cache.sh`

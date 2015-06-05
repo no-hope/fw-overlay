@@ -8,7 +8,8 @@ OVERLAY_DIR="$(readlink -f $(dirname $0)/..)"
 cd "${OVERLAY_DIR}"
 
 CACHE_DIR="${OVERLAY_DIR}/metadata/md5-cache"
-OVERLAY_NAME="$(cat ${OVERLAY_DIR}/profiles/repo_name)"
+REPO_NAME="${OVERLAY_DIR}/profiles/repo_name"
+OVERLAY_NAME="$([[ -f "${REPO_NAME}" ]] && cat ${REPO_NAME} || echo 'fw-overlay-dev' )"
 
 CONFIG=$(cat << EOF
 [DEFAULT]
