@@ -21,6 +21,13 @@ git fetch origin master
 git checkout -t origin/master
 git merge --no-ff --no-edit develop
 
+merged="true"
+if [[ $(git rev-parse origin/master) == $(git rev-parse master) ]]; then
+    merged="false"
+fi
+
+echo 'fw-overlay' > profiles/repo_name
+
 echo "Setting up gentoo stage3..."
 TMP_GENTOO="/tmp/fw-gentoo-$(date +%s)"
 mkdir -p "${TMP_GENTOO}"
@@ -64,6 +71,8 @@ git add -f .
 changed="$(git diff --name-only HEAD)"
 if [[ "${changed}" != "" ]]; then
     git commit -m "[auto-generated] cache update"
+    git push -q origin master
+elif [[ "${merged}" == "true" ]]; then
     git push -q origin master
 else
     echo "Nothing was changed!"
