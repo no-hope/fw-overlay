@@ -61,10 +61,10 @@ src_install() {
     fowners -R cassandra:cassandra /var/lib/cassandra
 
     if use systemd; then
-        sed "s/{SLOT}/${SLOT}/g" "${FILESDIR}/cassandra.service" > "${T}/cassandra-${SLOT}.service" || die
+        sed -e "s/{SLOT}/${SLOT}/g" -e "s/{PV}/${PV}/g" "${FILESDIR}/cassandra.service" > "${T}/cassandra-${SLOT}.service" || die
         systemd_dounit "${T}/cassandra-${SLOT}.service"
     else
-        sed "s/{SLOT}/${SLOT}/g" "${FILESDIR}/init" > "${T}/init" || die
+        sed -e "s/{SLOT}/${SLOT}/g" -e "s/{PV}/${PV}/g" "${FILESDIR}/init" > "${T}/init" || die
         newinitd "${T}/init" cassandra-${SLOT}
     fi
 
