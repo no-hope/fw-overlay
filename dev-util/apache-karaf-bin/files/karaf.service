@@ -1,0 +1,16 @@
+[Unit]
+Description=Karaf
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/karaf-{SLOT}.pid
+User=karaf
+Group=karaf
+ExecStart=/usr/bin/karaf-{SLOT} server
+StandardOutput=journal
+StandardError=journal
+LimitNOFILE=infinity
+
+[Install]
+WantedBy=multi-user.target

@@ -1,21 +1,21 @@
 #!/sbin/runscript
 
-NAME=cassandra-{SLOT}
-DESC="Apache Cassandra v{PV}"
+NAME=karaf-{SLOT}
+DESC="Apache Karaf v{PV}"
 PIDFILE=/var/run/$NAME/$NAME.pid
 
-_CASSANDRA_DIR="/opt/${NAME}"
+_KARAF_DIR="/opt/${NAME}"
 
-DAEMON=${_CASSANDRA_DIR}/bin/cassandra
-DAEMON_OPTS="-p $PIDFILE"
-USER="cassandra"
+DAEMON="${_KARAF_DIR}/bin/karaf"
+DAEMON_OPTS="server"
+USER="karaf"
 
-. ${_CASSANDRA_DIR}/conf/cassandra-env.sh
+PROPS="/opt/$NAME/instances/instance.properties"
 
 start() {
     ebegin "Starting ${DESC}"
     [ -e `dirname "$PIDFILE"` ] || \
-        install -d -ocassandra -gcassandra -m750 `dirname $PIDFILE`
+        install -d -o${USER} -g${USER} -m750 `dirname $PIDFILE`
 
     start-stop-daemon \
       --start \
@@ -30,9 +30,17 @@ start() {
       --user $USER \
       --exec $DAEMON \
       --background \
+      --make-pidfile \
       --pidfile "$PIDFILE" \
       -- $DAEMON_OPTS >/dev/null
     eend $?
+}
+
+get_pid() {
+    local name = "${1:-root}"
+    local id="$(cat "${PROPS}" | grep -P "name\s*=\s*${name}" | grep -oP "item.\d+")"
+    local pid="cat "${PROPS}" | grep "${id}.pid" | awk '{print $3}'"
+    echo $pid
 }
 
 stop() {
@@ -42,7 +50,7 @@ stop() {
 }
 
 restart() {
-    ebegin "Restarting cassandra"
+    ebegin "Restarting ${DESC}"
     start-stop-daemon \
       --stop \
       --quiet \
