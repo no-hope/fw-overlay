@@ -1,0 +1,67 @@
+#!/sbin/runscript
+
+NAME=karaf-{SLOT}
+DESC="Apache Karaf v{PV}"
+PIDFILE=/var/run/$NAME/$NAME.pid
+
+_KARAF_DIR="/opt/${NAME}"
+
+DAEMON="${_KARAF_DIR}/bin/karaf"
+DAEMON_OPTS="server"
+USER="karaf"
+
+PROPS="/opt/$NAME/instances/instance.properties"
+
+start() {
+    ebegin "Starting ${DESC}"
+    [ -e `dirname "$PIDFILE"` ] || \
+        install -d -o${USER} -g${USER} -m750 `dirname $PIDFILE`
+
+    start-stop-daemon \
+      --start \
+      --user $USER \
+      --exec $DAEMON \
+      --quiet \
+      --pidfile $PIDFILE \
+      --test >/dev/null || eend 1
+
+    start-stop-daemon \
+      --start \
+      --user $USER \
+      --exec $DAEMON \
+      --background \
+      --make-pidfile \
+      --pidfile "$PIDFILE" \
+      -- $DAEMON_OPTS >/dev/null
+    eend $?
+}
+
+get_pid() {
+    local name = "${1:-root}"
+    local id="$(cat "${PROPS}" | grep -P "name\s*=\s*${name}" | grep -oP "item.\d+")"
+    local pid="cat "${PROPS}" | grep "${id}.pid" | awk '{print $3}'"
+    echo $pid
+}
+
+stop() {
+    ebegin "Stopping ${DESC}"
+    start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE
+    eend $?
+}
+
+restart() {
+    ebegin "Restarting ${DESC}"
+    start-stop-daemon \
+      --stop \
+      --quiet \
+      --oknodo \
+      --retry TERM/30/KILL/5 > /dev/null || eend 1
+    start-stop-daemon \
+      --start \
+      --quiet \
+      --pidfile $PIDFILE \
+      --chuid $USER \
+      --exec $DAEMON \
+      -- $DAEMON_OPTS > /dev/null
+    eend $?
+}
