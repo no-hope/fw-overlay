@@ -21,6 +21,8 @@ git fetch origin master
 git checkout -t origin/master
 git merge --no-ff --no-edit develop
 
+echo 'fw-overlay' > profiles/repo_name
+
 echo "Setting up gentoo stage3..."
 TMP_GENTOO="/tmp/fw-gentoo-$(date +%s)"
 mkdir -p "${TMP_GENTOO}"
