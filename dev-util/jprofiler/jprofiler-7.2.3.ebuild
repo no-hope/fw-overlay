@@ -5,7 +5,7 @@
 EAPI="5"
 inherit eutils versionator
 
-SLOT="$(get_major_version)"
+SLOT="$(get_version_component_range 1-2)"
 RDEPEND=">=virtual/jdk-1.6"
 
 RESTRICT="strip"
@@ -16,7 +16,8 @@ SRC_URI="http://download-aws.ej-technologies.com/jprofiler/jprofiler_linux_${PV/
 LICENSE="jprofiler"
 IUSE=""
 KEYWORDS="~x86 ~amd64"
-S="${WORKDIR}/jprofiler${SLOT}"
+MV="$(get_major_version)"
+S="${WORKDIR}/jprofiler${MV}"
 INSTALL_DIR="/opt/${PN}-${PV}"
 
 src_install() {
@@ -24,7 +25,9 @@ src_install() {
     doins -r * .install4j
 
     fperms 755 ${INSTALL_DIR}/bin/jprofiler
-    make_wrapper "${PN}" "${INSTALL_DIR}/bin/jprofiler"
-    newicon ".install4j/i4j_extf_3_198c2a3_8mtf09.png" "${PN}.png"
-    make_desktop_entry "${PN}" "JProfiler" "${PN}" "Development;Profiling"
+    make_wrapper "${PN}-${SLOT}" "${INSTALL_DIR}/bin/jprofiler"
+
+    pngs=(.install4j/i4j_extf_3_*_8mtf09.png)
+    newicon "${pngs[0]}" "${PN}-${SLOT}.png"
+    make_desktop_entry "${PN}-${SLOT}" "JProfiler ${PV}" "${PN}-${SLOT}" "Development;Profiling"
 }
