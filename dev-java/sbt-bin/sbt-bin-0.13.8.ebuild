@@ -30,7 +30,7 @@ src_install() {
     doins -r *
 
     for i in bin/* ; do
-        if [[ $i == *.bat ]]; then
+        if [[ $i == *.bat || $i == *.jar || $i == *.bash ]]; then
             continue
         fi
         fperms 755 ${INSTALL_DIR}/${i}
