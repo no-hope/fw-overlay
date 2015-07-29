@@ -19,22 +19,18 @@ RDEPEND="x11-libs/gtk+:2"
 
 INSTALL_DIR="/opt/${PN}-$(get_major_version)"
 
-S=${WORKDIR}/"Sublime Text 3"
+S=${WORKDIR}/"sublime_text_3"
 
 src_install() {
-	insinto ${INSTALL_DIR}
+    insinto ${INSTALL_DIR}
 
-	doins -r "lib"
-	doins -r "Icon"
-	doins -r "Pristine Packages"
-	doins "sublime_plugin.py"
-	doins "PackageSetup.py"
-	doins "sublime_text"
+    doins -r *
 
     fperms 755 ${INSTALL_DIR}/sublime_text
+    fperms 755 ${INSTALL_DIR}/plugin_host
 
     make_wrapper "${PN}-${SLOT}" "${INSTALL_DIR}/sublime_text"
-    newicon "Icon/128x128/sublime_text.png" "${PN}-${PV}.png"
+    newicon "Icon/128x128/sublime-text.png" "${PN}-${PV}.png"
 
-	fw_make_desktop_entry "${PN}-${SLOT}" "Sublime Text Editor" "${PN}-${PV}" "GTK;Utility;Office;TextEditor;" "${PN}-${SLOT}.desktop" "StartupNotify=true\nMimeType=text/plain;"
+    fw_make_desktop_entry "${PN}-${SLOT}" "Sublime Text Editor" "${PN}-${PV}" "GTK;Utility;Office;TextEditor;" "${PN}-${SLOT}.desktop" "StartupNotify=true\nMimeType=text/plain;"
 }
