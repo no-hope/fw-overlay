@@ -6,7 +6,7 @@ KEYWORDS=~x86 ~amd64
 LICENSE=IntelliJ-IDEA
 RDEPEND=>=virtual/jdk-1.7
 RESTRICT=strip mirror
-SLOT=14
-SRC_URI=http://download.jetbrains.com/idea/ideaIU-14.1.2.tar.gz
+SLOT=15
+SRC_URI=http://download.jetbrains.com/idea/ideaIU-15.0.tar.gz
 _eclasses_=eutils	43da5163ba106e87d22d2e7d6d67537f	fwutils	a7d1b3a1beb7d0e435a1da2c6795dae7	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=f078c253cb9b09d7de0976b061183980
+_md5_=865a8d1a97bf5b4af6951367e239a9aa
