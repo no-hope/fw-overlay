@@ -10,10 +10,10 @@ set -o pipefail
 
 OVERLAY_DIR="$(readlink -f $(dirname $0)/..)"
 
-echo "Setting git up..."
+echo "Setting git up... $(git config --get remote.origin.url)"
 git config user.email "travis@no-hope.org"
 git config user.name "Travis CI"
-git config remote.origin.url "$(git config --get remote.origin.url | sed "s|git://|https://${GH_TOKEN}@|")"
+git config remote.origin.url "$(git config --get remote.origin.url | sed "s|git://|https://|;s|https://|https://${GH_TOKEN}@|")"
 git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 echo "Merging develop -> master..."
