@@ -38,7 +38,7 @@ src_install() {
     fperms 755 ${INSTALL_DIR}/bin/jprofiler
     make_wrapper "${PN}-${SLOT}" "${INSTALL_DIR}/bin/jprofiler"
 
-    pngs=(.install4j/i4j_extf_3_*_8mtf09.png)
+    pngs=(.install4j/i4j_extf_3_*_u9lgq5.png)
     newicon "${pngs[0]}" "${PN}-${SLOT}.png"
     make_desktop_entry "${PN}-${SLOT}" "JProfiler ${PV}" "${PN}-${SLOT}" "Development;Profiling"
 }
