@@ -9,6 +9,7 @@
       <email>ketoth.xupack@gmail.com</email>
       <name><![CDATA[Ketoth Xupack]]></name>
     </owner>
-    <source type="git" branch="master">git://github.com/no-hope/fw-overlay.git</source>
+    <source type="git">git://github.com/no-hope/fw-overlay.git</source>
+    <branch>master</branch>
   </repo>
 </repositories>
