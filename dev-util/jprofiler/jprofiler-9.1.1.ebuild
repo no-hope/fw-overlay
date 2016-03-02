@@ -21,14 +21,14 @@ S="${WORKDIR}/jprofiler${MV}"
 INSTALL_DIR="/opt/${PN}-${PV}"
 
 src_prepare(){
-	ARCH=$(uname -m)
+       ARCH=$(uname -m)
 
-	# remove unneeded arch files
-	[[ "${ARCH}" = "i686" || "${ARCH}" = "x86_64"  || ${ARCH} = "amd64" ]] || rm -r "${S}/bin/linux-x86" "${S}/bin/linux-x64"
-	[[ "${ARCH:0:3}" = "arm" ]] || rm -r "${S}/bin/linux-arm" "${S}/bin/linux-armhf"
-	[[ "${ARCH:0:3}" = "ppc" ]] || rm -r "${S}/bin/linux-ppc" "${S}/bin/linux-ppc64"
+       # remove unneeded arch files
+       [[ "${ARCH}" = "i686" || "${ARCH}" = "x86_64"  || ${ARCH} = "amd64" ]] || rm -r "${S}/bin/linux-x86" "${S}/bin/linux-x64"
+       [[ "${ARCH:0:3}" = "arm" ]] || rm -r "${S}/bin/linux-arm" "${S}/bin/linux-armhf"
+       [[ "${ARCH:0:3}" = "ppc" ]] || rm -r "${S}/bin/linux-ppc" "${S}/bin/linux-ppc64"
 
-	epatch_user
+       epatch_user
 }
 
 src_install() {
@@ -38,7 +38,7 @@ src_install() {
     fperms 755 ${INSTALL_DIR}/bin/jprofiler
     make_wrapper "${PN}-${SLOT}" "${INSTALL_DIR}/bin/jprofiler"
 
-    pngs=(.install4j/i4j_extf_3_*_8mtf09.png)
+    pngs=(.install4j/i4j_extf_3_*_u9lgq5.png)
     newicon "${pngs[0]}" "${PN}-${SLOT}.png"
     make_desktop_entry "${PN}-${SLOT}" "JProfiler ${PV}" "${PN}-${SLOT}" "Development;Profiling"
 }

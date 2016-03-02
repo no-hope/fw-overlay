@@ -20,6 +20,17 @@ MV="$(get_major_version)"
 S="${WORKDIR}/jprofiler${MV}"
 INSTALL_DIR="/opt/${PN}-${PV}"
 
+src_prepare(){
+	ARCH=$(uname -m)
+
+	# remove unneeded arch files
+	[[ "${ARCH}" = "i686" || "${ARCH}" = "x86_64"  || ${ARCH} = "amd64" ]] || rm -r "${S}/bin/linux-x86" "${S}/bin/linux-x64"
+	[[ "${ARCH:0:3}" = "arm" ]] || rm -r "${S}/bin/linux-arm" "${S}/bin/linux-armhf"
+	[[ "${ARCH:0:3}" = "ppc" ]] || rm -r "${S}/bin/linux-ppc" "${S}/bin/linux-ppc64"
+
+	epatch_user
+}
+
 src_install() {
     insinto "${INSTALL_DIR}"
     doins -r * .install4j
