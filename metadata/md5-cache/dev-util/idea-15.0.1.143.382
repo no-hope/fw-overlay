@@ -1,0 +1,12 @@
+DEFINED_PHASES=install prepare unpack
+DESCRIPTION=IntelliJ IDEA is an intelligent Java IDE
+EAPI=4
+HOMEPAGE=https://jetbrains.com/idea/
+KEYWORDS=~x86 ~amd64
+LICENSE=IntelliJ-IDEA
+RDEPEND=>=virtual/jdk-1.7
+RESTRICT=strip mirror
+SLOT=15
+SRC_URI=http://download.jetbrains.com/idea/ideaIU-15.0.1.tar.gz
+_eclasses_=eutils	9d81603248f2ba3ec59124320d123e5e	fwutils	a7d1b3a1beb7d0e435a1da2c6795dae7	multilib	3972ca401cf7dbb430df9995f5d8d580	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=865a8d1a97bf5b4af6951367e239a9aa

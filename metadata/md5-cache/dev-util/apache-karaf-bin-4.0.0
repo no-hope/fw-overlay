@@ -1,0 +1,13 @@
+DEFINED_PHASES=install prepare setup
+DEPEND=>=virtual/jdk-1.7 virtual/pkgconfig
+DESCRIPTION=Apache Karaf is a small OSGi based runtime which provides a lightweight container onto which various components and applications can be deployed.
+EAPI=4
+HOMEPAGE=https://karaf.apache.org/
+IUSE=systemd
+KEYWORDS=~x86 ~amd64
+LICENSE=Apache-2.0
+RDEPEND=>=virtual/jdk-1.7 systemd? ( sys-apps/systemd )
+SLOT=4.0
+SRC_URI=mirror://apache/karaf/4.0.0/apache-karaf-4.0.0.tar.gz
+_eclasses_=eutils	9d81603248f2ba3ec59124320d123e5e	multilib	3972ca401cf7dbb430df9995f5d8d580	systemd	3165c885f3c71ffae7a867d931fb0e07	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	user	906f3c8eb3a2350a4f1191a89baa3e46	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=6fdfb25caf5128a92169c6b4dccc8ad2
