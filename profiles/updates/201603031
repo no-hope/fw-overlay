@@ -1,0 +1,2 @@
+move dev-util/jd-gui dev-java/jd-gui
+move dev-util/jprofiler dev-java/jprofiler
