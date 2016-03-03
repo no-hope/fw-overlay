@@ -51,7 +51,7 @@ src_install() {
     doins ${P}-${ARCH}.so
 
     fperms 0755 ${dir}/${P}-${ARCH}.so
-    dosym ${dir} ${dir}/${PN}-${ARCH}.so
+    dosym ${dir}/${P}-${ARCH}.so ${dir}/${PN}-${ARCH}.so
 
     insinto "/usr/share/eselect/modules"
     doins ${FILESDIR}/java-hsdis.eselect
