@@ -67,7 +67,7 @@ cd ${OVERLAY_DIR}
 
 echo
 echo "Searching for changes..."
-git add -f .
+git add --all -f .
 changed="$(git diff --name-only HEAD)"
 if [[ "${changed}" != "" ]]; then
     git commit -m "[auto-generated] cache update"
