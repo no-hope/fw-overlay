@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=>=virtual/jdk-1.6
+DESCRIPTION=Basic disassembler plugin for HotSpot
+EAPI=5
+HOMEPAGE=https://kenai.com/projects/base-hsdis/
+KEYWORDS=amd64
+LICENSE=cc-by-3.0
+RDEPEND=>=virtual/jre-1.6 >=app-admin/eselect-1.4.4 sys-devel/binutils
+RESTRICT=mirror
+SLOT=0
+SRC_URI=http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/archive/jdk8u74-b02.tar.gz/src/share/tools/hsdis/ -> hsdis-8.74.02.tar.gz mirror://kernel/linux/devel/binutils/binutils-2.25.1.tar.bz2
+_eclasses_=eutils	9d81603248f2ba3ec59124320d123e5e	multilib	3972ca401cf7dbb430df9995f5d8d580	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=9bd929f7dd9006935964d555e0f64bd6
