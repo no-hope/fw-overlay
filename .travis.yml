@@ -1,3 +1,5 @@
+sudo: required
+dist: trusty
 env: LC_ALL=C
 before_script:
   - sudo -E bash scripts/create_chroot.sh

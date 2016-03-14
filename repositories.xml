@@ -10,5 +10,6 @@
       <name><![CDATA[Ketoth Xupack]]></name>
     </owner>
     <source type="git">git://github.com/no-hope/fw-overlay.git</source>
+    <branch>master</branch>
   </repo>
 </repositories>
