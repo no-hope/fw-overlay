@@ -1,4 +1,5 @@
-DEFINED_PHASES=install prepare
+DEFINED_PHASES=install postinst postrm preinst prepare
+DEPEND=>=sys-apps/sed-4
 DESCRIPTION=Double Commander is a cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
 EAPI=5
 HOMEPAGE=http://doublecmd.sourceforge.net/
@@ -9,5 +10,5 @@ RDEPEND=gtk? ( x11-libs/gtk+:2 ) qt4? ( dev-qt/qtgui:4 )
 REQUIRED_USE=?? ( gtk qt4 )
 SLOT=0
 SRC_URI=amd64? ( qt4? ( mirror://sourceforge/doublecmd/doublecmd-0.7.0.qt.x86_64.tar.xz ) gtk? ( mirror://sourceforge/doublecmd/doublecmd-0.7.0.gtk2.x86_64.tar.xz ) ) x86? ( qt4? ( mirror://sourceforge/doublecmd/doublecmd-0.7.0.qt.i386.tar.xz ) gtk? ( mirror://sourceforge/doublecmd/doublecmd-0.7.0.gtk2.i386.tar.xz ) )
-_eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	fwutils	a7d1b3a1beb7d0e435a1da2c6795dae7	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	d513d423d449877e49d99af3f7af7acb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	fwutils	f0aa875b6434c360f9e6e0a576883af6	gnome2-utils	c6dcdf3a2c22b578b16adb945dc85c35	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	c9d9187f4caa4026a0ceddd8dfceb3c1	versionator	99ae9d758cbe7cfed19170e7d48f5a9c	xdg-utils	e2b2bd56125ce8cf59ce30c642b59d48
 _md5_=8de1acc328f82033d44db480302e4659
