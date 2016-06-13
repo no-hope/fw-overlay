@@ -42,5 +42,5 @@ src_install() {
     make_wrapper "${PN}-${SLOT}" "${INSTALL_DIR}/sublime_text"
     newicon "Icon/128x128/sublime-text.png" "${PN}-${PV}.png"
 
-    fw_make_desktop_entry "${PN}-${SLOT}" "Sublime Text Editor" "${PN}-${PV}" "GTK;Utility;Office;TextEditor;" "${PN}-${SLOT}.desktop" "StartupNotify=true\nMimeType=text/plain;"
+    fw_make_desktop_entry "${PN}-${SLOT} %F" "Sublime Text Editor" "${PN}-${PV}" "GTK;Utility;Office;TextEditor;" "${PN}-${SLOT}.desktop" "StartupNotify=true\nMimeType=text/*;application/xml;application/javascript"
 }

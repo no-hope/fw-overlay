@@ -1,7 +1,7 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit eutils
+inherit eutils gnome2-utils
 
 # @FUNCTION: fw_make_desktop_entry
 # @USAGE: fw_make_desktop_entry(<command>, [name], [icon], [type], [desktop_override], [fields])
@@ -199,3 +199,14 @@ fw_make_desktop_entry() {
 	) || die "installing desktop file failed"
 }
 
+pkg_preinst() {
+	gnome2_icon_savelist
+}
+
+pkg_postinst() {
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
+}
