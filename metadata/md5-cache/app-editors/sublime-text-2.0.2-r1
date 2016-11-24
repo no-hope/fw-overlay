@@ -9,5 +9,5 @@ RDEPEND=x11-libs/gtk+:2
 RESTRICT=mirror
 SLOT=2
 SRC_URI=amd64? ( https://download.sublimetext.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -> sublime-text-2.0.2_amd64.tar.bz2 ) x86? ( https://download.sublimetext.com/Sublime%20Text%202.0.2.tar.bz2 -> sublime-text-2.0.2_x86.tar.bz2 )
-_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	fwutils	f0aa875b6434c360f9e6e0a576883af6	gnome2-utils	c6dcdf3a2c22b578b16adb945dc85c35	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	6198c04daba0e1307bd844df7d37f423	versionator	99ae9d758cbe7cfed19170e7d48f5a9c	xdg-utils	e2b2bd56125ce8cf59ce30c642b59d48
+_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	fwutils	f0aa875b6434c360f9e6e0a576883af6	gnome2-utils	c6dcdf3a2c22b578b16adb945dc85c35	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c	xdg-utils	e2b2bd56125ce8cf59ce30c642b59d48
 _md5_=ec344598664848259685ef10b9b34a96
