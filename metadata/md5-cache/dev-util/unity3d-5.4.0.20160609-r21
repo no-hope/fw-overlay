@@ -10,5 +10,5 @@ RDEPEND=ffmpeg? ( media-video/ffmpeg ) nodejs? ( net-libs/nodejs ) java? ( virtu
 RESTRICT=strip mirror
 SLOT=5.4
 SRC_URI=http://download.unity3d.com/download_unity/linux/unity-editor-installer-5.4.0b21+20160609.sh -> unity3d-5.4.0.20160609+20160609.sh
-_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	fwutils	f0aa875b6434c360f9e6e0a576883af6	gnome2-utils	c6dcdf3a2c22b578b16adb945dc85c35	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c	xdg-utils	e2b2bd56125ce8cf59ce30c642b59d48
+_eclasses_=eutils	017377e73405d964cd0137088cddb9c3	fwutils	f0aa875b6434c360f9e6e0a576883af6	gnome2-utils	c6dcdf3a2c22b578b16adb945dc85c35	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c	xdg-utils	e2b2bd56125ce8cf59ce30c642b59d48
 _md5_=e83bc57580e437f67c781c14e7046af2

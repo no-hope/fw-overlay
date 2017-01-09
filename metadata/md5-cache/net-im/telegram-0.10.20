@@ -6,6 +6,6 @@ KEYWORDS=~x86 ~amd64
 LICENSE=GPL-3
 RESTRICT=mirror
 SLOT=0
-SRC_URI=amd64? ( https://updates.tdesktop.com/tlinux/tsetup.0.9.56.tar.xz -> telegram-0.9.56.tar.xz ) x86? ( https://updates.tdesktop.com/tlinux32/tsetup32.0.9.56.tar.xz -> telegram32-0.9.56.tar.xz )
+SRC_URI=amd64? ( https://updates.tdesktop.com/tlinux/tsetup.0.10.20.tar.xz -> telegram-0.10.20.tar.xz ) x86? ( https://updates.tdesktop.com/tlinux32/tsetup32.0.10.20.tar.xz -> telegram32-0.10.20.tar.xz )
 _eclasses_=eutils	017377e73405d964cd0137088cddb9c3	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=0c258f1315a1d207d48479093f19e166
