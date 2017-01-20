@@ -10,5 +10,5 @@ RDEPEND=>=dev-libs/libgcrypt-1.5.0-r2 dev-qt/qtcore:4 dev-qt/qtgui:4 dev-qt/qtdb
 RESTRICT=nomirror
 SLOT=0
 SRC_URI=https://github.com/keepassx/keepassx/archive/2.0-alpha5.tar.gz -> keepassx-2.0_alpha5.tar.gz
-_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	cmake-utils	fa4d8052a1ccf4fbbfa76361bffebe42	eutils	017377e73405d964cd0137088cddb9c3	flag-o-matic	7366202dd55cb8f018f5d450d54e7749	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	66b3bf714f8cfc1b6494db5269b4666e	qmake-utils	0a242e7177789b0028b4045f336dd4db	qt4-r2	d6c113024bb3086a1facc65cd338930e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	cmake-utils	fa4d8052a1ccf4fbbfa76361bffebe42	eutils	017377e73405d964cd0137088cddb9c3	flag-o-matic	7366202dd55cb8f018f5d450d54e7749	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	7bb10a841be2368af0c00f27dd67560b	qmake-utils	0a242e7177789b0028b4045f336dd4db	qt4-r2	d6c113024bb3086a1facc65cd338930e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=214af8cb5d48507fddcd75eeea7a4f5c
