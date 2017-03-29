@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=5
 
-inherit python mercurial
+PYTHON_COMPAT=( python{2_7,3_4} )
+inherit python-r1 mercurial
 
 KEYWORDS="~x86-macos"
 

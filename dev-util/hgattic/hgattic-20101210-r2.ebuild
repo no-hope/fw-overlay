@@ -2,13 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
-PYTHON_DEPEND="2"
-PYTHON_USE_WITH="threads"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
+PYTHON_REQ_USE="threads(+)"
 
-inherit distutils
+inherit distutils-r1
 
 RID="3ba1e5f03971"
 DESCRIPTION="Patch shelve support for Mercurial"

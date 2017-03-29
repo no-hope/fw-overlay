@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-im/pyicq-t/pyicq-t-0.8.1.5-r1.ebuild,v 1.1 2013/03/18 15:55:08 hanno Exp $
 
-EAPI="5"
-PYTHON_DEPEND="2"
-inherit eutils python
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
+inherit eutils python-r1
 
 MY_P="${P/pyicq-t/pyicqt}"
 
@@ -20,7 +20,7 @@ IUSE="webinterface postgres"
 
 DEPEND="net-im/jabber-base"
 RDEPEND="${DEPEND}
-	>=dev-python/twisted-core-2.2.0
+	>=dev-python/twisted-2.2.0
 	>=dev-python/twisted-words-0.1.0
 	>=dev-python/twisted-web-0.5.0
 	webinterface? ( >=dev-python/nevow-0.4.1 )
@@ -28,8 +28,8 @@ RDEPEND="${DEPEND}
 	>=dev-python/imaging-1.1"
 
 pkg_setup() {
-	python_set_active_version 2
-	python_pkg_setup
+	python-r1_set_active_version 2
+	python-r1_pkg_setup
 }
 
 src_prepare() {
@@ -42,7 +42,7 @@ src_prepare() {
 src_install() {
 	local inspath
 
-	inspath=$(python_get_sitedir)/${PN}
+	inspath=$(python-r1_get_sitedir)/${PN}
 	insinto ${inspath}
 	doins -r data src tools
 	newins PyICQt.py ${PN}.py
@@ -51,7 +51,7 @@ src_install() {
 	newins config_example.xml ${PN}.xml
 	fperms 600 /etc/jabber/${PN}.xml
 	fowners jabber:jabber /etc/jabber/${PN}.xml
-	fperms 755 "$(python_get_sitedir)/${PN}/pyicq-t.py"
+	fperms 755 "$(python-r1_get_sitedir)/${PN}/pyicq-t.py"
 	sed -i \
 		-e "s:<spooldir>[^\<]*</spooldir>:<spooldir>/var/spool/jabber</spooldir>:" \
 		-e "s:<pid>[^\<]*</pid>:<pid>/var/run/jabber/${PN}.pid</pid>:" \
@@ -59,11 +59,11 @@ src_install() {
 
 	newinitd "${FILESDIR}/${PN}-0.8-initd-r2" ${PN}
 	sed -i -e "s:INSPATH:${inspath}:" "${ED}/etc/init.d/${PN}"
-	python_convert_shebangs ${PYTHON_ABI} "${ED}$(python_get_sitedir)/${PN}/pyicq-t.py"
+	python-r1_convert_shebangs ${PYTHON_ABI} "${ED}$(python-r1_get_sitedir)/${PN}/pyicq-t.py"
 }
 
 pkg_postinst() {
-	python_mod_optimize ${PN}
+	python-r1_mod_optimize ${PN}
 
 	elog "A sample configuration file has been installed in /etc/jabber/${PN}.xml."
 	elog "Please edit it and the configuration of your Jabber server to match."
@@ -71,12 +71,12 @@ pkg_postinst() {
 	ewarn "If you are storing user accounts in MySQL and are upgrading from a "
 	ewarn "version older than 0.8.1, then you will need to run the following "
 	ewarn "command to create some new tables:"
-	ewarn "	 mysql -u user_name -p pyicqt < $(python_get_sitedir)/${PN}/tools/db-setup.mysql"
+	ewarn "	 mysql -u user_name -p pyicqt < $(python-r1_get_sitedir)/${PN}/tools/db-setup.mysql"
 
 	elog  "These instructions along with a list of new config variables are "
 	elog  "available at: http://code.google.com/p/pyicqt/wiki/Upgrade"
 }
 
 pkg_postrm() {
-	python_mod_cleanup ${PN}
+	python-r1_mod_cleanup ${PN}
 }
