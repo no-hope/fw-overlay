@@ -17,7 +17,7 @@ LICENSE="jprofiler"
 IUSE=""
 KEYWORDS="~x86 ~amd64"
 MV="$(get_major_version)"
-S="${WORKDIR}/jprofiler${MV}"
+S="${WORKDIR}/jprofiler${PV}"
 INSTALL_DIR="/opt/${PN}-${PV}"
 
 src_prepare(){
