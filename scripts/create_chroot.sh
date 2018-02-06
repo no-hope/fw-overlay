@@ -19,7 +19,7 @@ git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 echo "Merging develop -> master..."
 git fetch origin master
 git checkout -t origin/master
-git merge --no-ff --no-edit develop
+git merge -X theirs --no-ff --no-edit develop
 
 merged="true"
 if [[ $(git rev-parse origin/master) == $(git rev-parse master) ]]; then

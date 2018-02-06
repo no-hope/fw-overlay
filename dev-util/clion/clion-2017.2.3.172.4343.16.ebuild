@@ -16,11 +16,28 @@ HOMEPAGE="https://www.jetbrains.com/clion/"
 MY_PN="CLion"
 SRC_URI="http://download.jetbrains.com/cpp/${MY_PN}-${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
 
+VER=($(get_all_version_components))
+if [[ "${VER[4]}" == "0" ]]; then
+    SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(get_version_component_range 1-2).tar.gz -> ${PN}-${PV}.tar.gz"
+else
+    SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(get_version_component_range 1-3).tar.gz -> ${PN}-${PV}.tar.gz"
+fi
+
+MY_PV="$(get_version_component_range 4-6)"
+SHORT_PV="$(get_version_component_range 1-2)"
+
+
 LICENSE="CLion-IDEA"
 IUSE=""
 KEYWORDS="~x86 ~amd64"
 
 S="${WORKDIR}/${PN}-${PV}"
+
+src_unpack() {
+    unpack ${A}
+    mv ${WORKDIR}/${PN}-* ${WORKDIR}/${PN}-${PV} || die
+}
+
 
 src_install() {
     local dir="/opt/${P}"
@@ -31,7 +48,7 @@ src_install() {
     sed -e "s|^message()|source /etc/conf.d/clion\n\nmessage()|" \
         -i bin/${PN}.sh || die "Unable to patch startup script"
 
-    [[ -d "jre" ]] && rm -rf jre || die "no embedded jre found"
+    # [[ -d "jre" ]] && rm -rf jre || die "no embedded jre found"
 
     doins -r *
 
