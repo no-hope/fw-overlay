@@ -30,3 +30,4 @@ egencache \
     --repo="${OVERLAY_NAME}" \
     --update \
     --update-manifests
+echo "egencache exit code $?"
