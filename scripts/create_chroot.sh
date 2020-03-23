@@ -72,8 +72,10 @@ changed="$(git diff --name-only HEAD)"
 if [[ "${changed}" != "" ]]; then
     git commit -m "[auto-generated] cache update"
     git push -q origin master
+    echo "Tree was changed. exit code $?"
 elif [[ "${merged}" == "true" ]]; then
     git push -q origin master
+    echo "Tree is merged. exit code $?"
 else
     echo "Nothing was changed!"
 fi
