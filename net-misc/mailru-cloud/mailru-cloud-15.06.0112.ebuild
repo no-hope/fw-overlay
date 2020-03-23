@@ -2,22 +2,22 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI=7
 
-inherit rpm bash-completion-r1 versionator
+inherit rpm bash-completion-r1
 
 DESCRIPTION="Mail.Ru Cloud"
 HOMEPAGE="http://cloud.mail.ru/"
 SRC_URI="
-    x86?   ( https://linuxdesktopcloud.cdnmail.ru/rpm/default/mail.ru-cloud-$(get_version_component_range 1-1)-$(get_version_component_range 2-3).i386.rpm )
-    amd64? ( https://linuxdesktopcloud.cdnmail.ru/rpm/default/mail.ru-cloud-$(get_version_component_range 1-1)-$(get_version_component_range 2-3).x86_64.rpm )
+    x86?   ( https://linuxdesktopcloud.mail.ru/rpm/default/mail.ru-cloud-fedora-$(ver_cut 1-2)-$(ver_cut 3).i386.rpm )
+    amd64? ( https://linuxdesktopcloud.mail.ru/rpm/default/mail.ru-cloud-fedora-$(ver_cut 1-2)-$(ver_cut 3).x86_64.rpm )
     "
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
 SLOT="0"
-KEYWORDS="x86 amd64"
+KEYWORDS="~x86 amd64"
 
 RESTRICT="mirror"
 QA_PRESTRIPPED="/usr/bin/${PN}"
