@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-im/pyicq-t/pyicq-t-0.8.1.5-r4.ebuild,v 1.1 2014/03/30 13:44:13 pacho Exp $
 
-EAPI="5"
+EAPI=7
 PYTHON_COMPAT=( python2_7 )
 inherit eutils python-single-r1 systemd
 
@@ -19,13 +19,13 @@ IUSE="webinterface systemd postgres"
 
 DEPEND="net-im/jabber-base"
 RDEPEND="${DEPEND}
-	dev-python/twisted-core[${PYTHON_USEDEP}]
-	dev-python/twisted-words[${PYTHON_USEDEP}]
-	dev-python/twisted-web[${PYTHON_USEDEP}]
-	webinterface? ( >=dev-python/nevow-0.4.1[${PYTHON_USEDEP}] )
-	postgres? ( >=dev-db/pygresql-3.8.1[${PYTHON_USEDEP}] )
+	dev-python/twisted-core
+	dev-python/twisted-words
+	dev-python/twisted-web
+	webinterface? ( >=dev-python/nevow-0.4.1 )
+	postgres? ( >=dev-db/pygresql-3.8.1 )
 	systemd? ( sys-apps/systemd )
-	virtual/python-imaging[${PYTHON_USEDEP}]"
+	virtual/python-imaging"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-python26-warnings.diff"
