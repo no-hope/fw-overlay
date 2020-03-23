@@ -70,6 +70,8 @@ echo
 echo "Searching for changes..."
 git add --all -f .
 changed="$(git diff --name-only HEAD)"
+
+echo "Changed: ${changed}"
 if [[ "${changed}" != "" ]]; then
     git commit -m "[auto-generated] cache update"
     git push -q origin master
