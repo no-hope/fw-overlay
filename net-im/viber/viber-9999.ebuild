@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI=7
 
 inherit eutils
 DESCRIPTION="Free calls, text and picture sharing with anyone, anywhere!"
 HOMEPAGE="http://www.viber.com"
-SRC_URI="http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb"
+SRC_URI="https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb"
 
 SLOT="0"
 KEYWORDS=""
