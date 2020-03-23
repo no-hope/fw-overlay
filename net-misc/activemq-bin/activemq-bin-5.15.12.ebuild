@@ -1,12 +1,11 @@
-EAPI="5"
+EAPI=7
 
 inherit eutils
 
 DESCRIPTION="Apache ActiveMQ is the most popular and powerful open source messaging and Integration Patterns server"
 HOMEPAGE="http://activemq.apache.org/"
 LICENSE="Apache-2.0"
-SRC_URI="mirror://apache/activemq/apache-activemq/${PV}/apache-activemq-${PV}-bin.zip"
-RESTRICT="mirror"
+SRC_URI="mirror://apache/activemq/${PV}/apache-activemq-${PV}-bin.tar.gz"
 SLOT="0"
 KEYWORDS="x86 amd64"
 IUSE=""
