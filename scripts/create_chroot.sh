@@ -50,8 +50,9 @@ mkdir gentoo/repo
 mount -o bind "${OVERLAY_DIR}" gentoo/repo
 
 cp -L /etc/resolv.conf gentoo/etc/resolv.conf
+chroot gentoo find /var/db
 chroot gentoo mkdir -p /var/db/repos/gentoo
-chroot gentoo chmod ugo+rwx /var/db/repos/gentoo
+chroot gentoo chmod -R ugo+rwx /var/db/repos/gentoo
 chroot gentoo emerge-webrsync -q
 chroot gentoo emerge --quiet --sync
 
