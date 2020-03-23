@@ -20,7 +20,7 @@ fi
 DESCRIPTION="Nixnote - A clone of Evernote for Linux"
 HOMEPAGE="http://sourceforge.net/projects/nevernote/"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64"
 IUSE="qt4 qt5 +opencv3"
 
 REQUIRED_USE="^^ ( qt4 qt5 )
@@ -71,7 +71,7 @@ src_prepare() {
 
 src_install() {
 	insinto /usr/share/nixnote2
-	doins -r certs help images java qss translations changelog.txt license.html shortcuts.txt *.ini
+	doins -r *
 
 	rm -r ${D}/usr/share/nixnote2/translations/*.ts
 
