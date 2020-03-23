@@ -11,7 +11,7 @@ inherit distutils-r1
 RID="3ba1e5f03971"
 DESCRIPTION="Patch shelve support for Mercurial"
 HOMEPAGE="http://mercurial.selenic.com/wiki/AtticExtension"
-SRC_URI="http://bitbucket.org/Bill_Barry/hgattic/get/${RID}.tar.bz2"
+SRC_URI="http://bitbucket.org/Bill_Barry/hgattic/get/${RID}.tar.bz2 -> ${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
