@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-EAPI="4"
-inherit eutils versionator
+EAPI=7
+inherit eutils desktop
 
 SLOT="0"
 RDEPEND=">=virtual/jdk-1.6"
@@ -16,20 +16,20 @@ HOMEPAGE="https://www.jetbrains.com/clion/"
 MY_PN="CLion"
 SRC_URI="http://download.jetbrains.com/cpp/${MY_PN}-${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
 
-VER=($(get_all_version_components))
+VER=($(ver_cut 1))
 if [[ "${VER[4]}" == "0" ]]; then
-    SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(get_version_component_range 1-2).tar.gz -> ${PN}-${PV}.tar.gz"
+    SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(ver_cut 1-2).tar.gz -> ${PN}-${PV}.tar.gz"
 else
-    SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(get_version_component_range 1-3).tar.gz -> ${PN}-${PV}.tar.gz"
+    SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(ver_cut 1-3).tar.gz -> ${PN}-${PV}.tar.gz"
 fi
 
-MY_PV="$(get_version_component_range 4-6)"
-SHORT_PV="$(get_version_component_range 1-2)"
+MY_PV="$(ver_cut 4-6)"
+SHORT_PV="$(ver_cut 1-2)"
 
 
 LICENSE="CLion-IDEA"
 IUSE=""
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="amd64"
 
 S="${WORKDIR}/${PN}-${PV}"
 
@@ -71,9 +71,9 @@ src_install() {
     fperms 755 "${dir}/bin/cmake/linux/bin/cpack"
     fperms 755 "${dir}/bin/cmake/linux/bin/ctest"
 
-    newicon "bin/${PN}.svg" "${exe}.svg"
-    make_wrapper "${exe}" "/opt/${P}/bin/${PN}.sh"
-    make_desktop_entry ${exe} "CLion IDE ${PV}" "${exe}" "Development;IDE"
+    newicon "bin/${PN}.svg" "${exe}.svg" || die
+    make_wrapper "${exe}" "/opt/${P}/bin/${PN}.sh" || die
+    make_desktop_entry ${exe} "CLion IDE ${PV}" "${exe}" "Development;IDE" || die
 
-    newconfd "${FILESDIR}/config" ${PN}
+    newconfd "${FILESDIR}/config" ${PN} || die
 }
