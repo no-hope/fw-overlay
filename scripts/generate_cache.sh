@@ -16,10 +16,11 @@ CONFIG=$(cat << EOF
 main-repo=gentoo
 
 [gentoo]
-location = /usr/portage
+location = /var/db/repos/gentoo
 
 [${OVERLAY_NAME}]
 location=${OVERLAY_DIR}
+auto-sync = true
 EOF
 )
 
