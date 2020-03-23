@@ -4,7 +4,7 @@
    exit 1
  fi
  
-+. /etc/conf.d/idea-2018
++. /etc/conf.d/idea-2019
 +
  OS_TYPE=`"$UNAME" -s`
  
