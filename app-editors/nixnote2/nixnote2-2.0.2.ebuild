@@ -2,19 +2,18 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
-inherit qmake-utils versionator
-
+inherit qmake-utils
 
 if [[ "${PV}" == "9999" ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/baumgarr/${PN}.git"
 	SLOT="0/9999"
 else
-	MY_PV="$(replace_version_separator 2 '-')"
+	MY_PV="$(ver_cut 1-)"
 	SRC_URI="https://github.com/baumgarr/${PN}/archive/v${MY_PV}.tar.gz -> ${PN}-${MY_PV}.tar.gz"
-	SLOT="0/2"   
+	SLOT="0/2"
 	S="${WORKDIR}/${PN}-${MY_PV}"
 fi
 
@@ -27,10 +26,9 @@ IUSE="qt4 qt5 +opencv3"
 REQUIRED_USE="^^ ( qt4 qt5 )
 		      qt5? ( opencv3 )
 		      "
-		
+
 DEPEND="dev-libs/boost
 	      app-text/hunspell
-	      
 	      qt4? (
 		      app-text/poppler[qt4]
 		      dev-qt/qtwebkit:4
@@ -50,7 +48,7 @@ DEPEND="dev-libs/boost
 	      )
 	      "
 RDEPEND="${DEPEND}
-		app-text/htmltidy"
+		app-text/tidy-html5"
 
 src_prepare() {
 	# fix VideoCapture undefined reference error with opencv-3
@@ -58,16 +56,17 @@ src_prepare() {
 		sed -i 's/LIBS += /LIBS +=  -lopencv_videoio/g' NixNote2.pro
 		sed -i '/\#include "opencv\/cv.h"/i\#include "opencv2\/videoio.hpp"' dialog/webcamcapturedialog.h
 	fi
-	
+
 	lupdate -pro NixNote2.pro -no-obsolete || die
 	lrelease NixNote2.pro || die
-	
+
 	if use qt4; then
 		eqmake4 NixNote2.pro || die "qmake failed"
 	fi
 	if use qt5; then
 		eqmake5 NixNote2.pro || die "qmake failed"
 	fi
+	eapply_user
 }
 
 src_install() {
@@ -75,12 +74,11 @@ src_install() {
 	doins -r certs help images java qss translations changelog.txt license.html shortcuts.txt *.ini
 
 	rm -r ${D}/usr/share/nixnote2/translations/*.ts
-	
+
 	dobin nixnote2
-	
+
 	insinto /usr/share/applications
 	doins nixnote2.desktop
-	
-	doman ${S}/man/nixnote2.1
 
+	doman ${S}/man/nixnote2.1
 }
