@@ -1,0 +1,14 @@
+DEFINED_PHASES=install postinst postrm prepare unpack
+DEPEND=dev-util/patchelf
+DESCRIPTION=Video conferencing and web conferencing service
+EAPI=7
+HOMEPAGE=https://zoom.us
+IUSE=alsa pax_kernel pulseaudio
+KEYWORDS=amd64
+LICENSE=ZOOM
+RDEPEND=dev-util/patchelf pulseaudio? ( media-sound/pulseaudio[alsa?] ) dev-db/sqlite:3 dev-db/unixODBC dev-libs/nss dev-qt/qtsql:5 dev-qt/qtconcurrent:5 dev-qt/qtmultimedia:5 dev-qt/qtquickcontrols2:5 dev-qt/qtdeclarative:5 dev-qt/qtsvg:5 dev-qt/qtxmlpatterns:5 media-libs/gst-plugins-base media-libs/mesa media-libs/fontconfig dev-libs/glib:2 x11-libs/libSM x11-libs/libX11 x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libXi x11-libs/libXrandr x11-libs/libXrender x11-libs/libxshmfence x11-libs/xcb-util-image x11-libs/xcb-util-keysyms
+RESTRICT=mirror preserve-libs split
+SLOT=0
+SRC_URI=amd64? ( https://zoom.us/client/3.5.361976.0301/zoom_amd64.deb -> zoom-3.5.361976.0301_amd64.deb ) x86? ( https://zoom.us/client/3.5.361976.0301/zoom_i386.deb -> zoom-3.5.361976.0301_x86.deb )
+_eclasses_=pax-utils	a41d1fd1c111289ffa04490de6ee79d7	unpacker	3cd8bad0d31e525cd26be1bfa4e61631	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
+_md5_=896a724083c010153d4b7129927e448d

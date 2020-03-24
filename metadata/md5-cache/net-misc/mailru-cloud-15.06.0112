@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=>=app-arch/rpm2targz-9.0.0.3g
+DESCRIPTION=Mail.Ru Cloud
+EAPI=7
+HOMEPAGE=http://cloud.mail.ru/
+KEYWORDS=~x86 amd64
+RESTRICT=mirror
+SLOT=0
+SRC_URI=x86? ( https://linuxdesktopcloud.mail.ru/rpm/default/mail.ru-cloud-fedora-15.06-0112.i386.rpm ) amd64? ( https://linuxdesktopcloud.mail.ru/rpm/default/mail.ru-cloud-fedora-15.06-0112.x86_64.rpm )
+_eclasses_=bash-completion-r1	47a7402d95930413ce25ba8d857339bb	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	multilib	1d91b03d42ab6308b5f4f6b598ed110e	rpm	c1d552831d4ee9c7bb82c35545c264c8	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=aee41fd961c43827420cf10353eed55b

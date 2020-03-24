@@ -1,0 +1,14 @@
+BDEPEND=|| ( dev-vcs/subversion[http] dev-vcs/subversion[webdav-neon] dev-vcs/subversion[webdav-serf] ) net-misc/rsync
+DEFINED_PHASES=install postinst preinst setup unpack
+DEPEND=net-im/jabber-base
+DESCRIPTION=Jabber2Jabber Transport
+EAPI=7
+HOMEPAGE=http://wiki.jrudevels.org/index.php/Eng:J2J
+IUSE=postgres mysql +python_single_target_python2_7
+KEYWORDS=~x86
+LICENSE=GPL-2
+PROPERTIES=live
+RDEPEND=net-im/jabber-base dev-python/twisted-core dev-python/twisted-words dev-python/twisted-names postgres? ( !mysql? ( >=dev-db/pygresql-4.1.1-r1 ) ) mysql? ( !postgres? ( >=dev-db/mysql-4.1 ) )
+SLOT=0
+_eclasses_=estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	multilib	1d91b03d42ab6308b5f4f6b598ed110e	python-single-r1	151046e8d2ffc8cffc8329bbc50a686b	python-utils-r1	e03f98555f2634bb9fb3160a8e30e3ec	subversion	4beaac7ba954403d7bbe4d4b8befdb82	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=51cd2c4a7e24ea9da077c81e9566bd9b
