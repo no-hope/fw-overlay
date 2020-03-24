@@ -30,5 +30,6 @@ egencache \
     --jobs="$(($(nproc) + 1))" \
     --repo="${OVERLAY_NAME}" \
     --update \
-    --update-manifests
+    --update-manifests \
+    --tolerant
 echo "egencache exit code $?"
