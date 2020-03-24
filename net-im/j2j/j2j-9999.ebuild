@@ -1,7 +1,7 @@
 # Copyright Nikolaus Polak
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI=7
 PYTHON_DEPEND="2"
 PYTHON_COMPAT=( python2_7 )
 inherit eutils python-single-r1 subversion
@@ -18,10 +18,10 @@ IUSE="+postgres mysql"
 IUSE="postgres mysql"
 DEPEND="net-im/jabber-base"
 RDEPEND="${DEPEND}
-         dev-python/twisted-core[${PYTHON_USEDEP}]
-         dev-python/twisted-words[${PYTHON_USEDEP}]
-         dev-python/twisted-names[${PYTHON_USEDEP}]
-         postgres? ( !mysql? ( >=dev-db/pygresql-4.1.1-r1[${PYTHON_USEDEP}] ) )
+         dev-python/twisted-core
+         dev-python/twisted-words
+         dev-python/twisted-names
+         postgres? ( !mysql? ( >=dev-db/pygresql-4.1.1-r1 ) )
          mysql? ( !postgres? ( >=dev-db/mysql-4.1 ) )"
 
 src_unpack() {

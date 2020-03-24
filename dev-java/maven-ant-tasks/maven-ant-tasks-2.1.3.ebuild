@@ -12,12 +12,12 @@ inherit java-pkg-2 eutils
 DESCRIPTION="Ivy is a free java based dependency manager"
 HOMEPAGE="http://ant.apache.org/ivy"
 
-SRC_URI="http://www.apache.org/dist//maven/binaries/${PN}-${PV}.jar"
+SRC_URI="https://repo.maven.apache.org/maven2/org/apache/maven/${PN}/${PV}/${PN}-${PV}.jar"
 
 LICENSE="Apache-2.0"
 KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos"
 SLOT=0
-IUSE=""
+IUSE="test"
 RESTRICT="mirror"
 
 DEPEND=">=virtual/jdk-1.6
