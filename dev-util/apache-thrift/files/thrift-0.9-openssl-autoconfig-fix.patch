@@ -1,0 +1,14 @@
+--- configure.ac.orig	2020-03-31 18:37:20.000000000 +0300
++++ configure.ac	2020-03-31 18:38:07.000000000 +0300
+@@ -556,9 +556,9 @@
+ # mingw toolchain used to build "Thrift Compiler for Windows"
+ # does not support libcrypto, so we just check if we building the cpp library
+ AC_CHECK_LIB(crypto,
+-    BN_init,
++    CRYPTO_new_ex_data,
+     [AC_CHECK_LIB(ssl,
+-        SSL_ctrl,
++        SSL_new,
+         [LIBS="-lssl -lcrypto $LIBS"],
+         [AC_MSG_ERROR(["Error: libssl required"])],
+         -lcrypto
