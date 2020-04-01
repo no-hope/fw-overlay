@@ -14,16 +14,23 @@ SRC_URI="https://github.com/apache/thrift/archive/${PV}.tar.gz -> thrift-${PV}.t
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="+pic gnu-ld +cpp +boost +libevent +zlib qt4 +c_glib csharp +java erlang +python
-perl php php_extension ruby haskell go d"
+IUSE="+pic gnu-ld +cpp +boost +libevent +zlib qt4 qt5 +c_glib csharp +java erlang +python
+perl php php_extension ruby haskell go d nodejs dart haxe tutorial zlib lua test static-libs boostthreads"
 
 DEPEND="
     virtual/yacc
-    dev-libs/openssl
+    dev-libs/openssl[sslv3]
     cpp? (
-        boost? ( >=dev-libs/boost-1.40.0 )
+        boost? (
+            >=dev-libs/boost-1.53.0
+            boostthreads? (
+                >=dev-libs/boost-1.53.0[threads]
+            )
+        )
         zlib? ( >=sys-libs/zlib-1.2.3 )
         libevent? ( dev-libs/libevent )
+        qt4? ( dev-qt/qtcore:4 dev-qt/qtnetwork:4 )
+        qt5? ( dev-qt/qtcore:5 dev-qt/qtnetwork:5 )
     )
     java? (
         >=virtual/jdk-1.5
@@ -43,16 +50,23 @@ DEPEND="
     php? ( >=dev-lang/php-5.0.0 )
     php_extension? ( >=dev-lang/php-5.0.0 )
     haskell? ( dev-haskell/haskell-platform )
+    haxe? ( dev-lang/haxe )
+    nodejs? ( net-libs/nodejs )
     ruby? ( dev-lang/ruby )
     go? ( dev-lang/go )
+    lua? ( dev-lang/lua:5.2 )
+    test? (
+        boost? ( >=dev-libs/boost-1.53.0[static-libs] )
+    )
     "
 RDEPEND="${DEPEND}"
+RESTRICT=network-sandbox
 
 S="${WORKDIR}/thrift-${PV}"
 
 src_prepare() {
     cd "${S}"
-    epatch "${FILESDIR}/thrift-0.9-mvn-path-fix.patch"
+    epatch "${FILESDIR}/thrift-0.13-gradle-https-fix.patch"
 }
 
 pkg_setup() {
@@ -61,15 +75,20 @@ pkg_setup() {
 }
 
 src_configure() {
+    export GRADLE_OPTS=-Duser.home=${WORKDIR}
+    export GRADLE_USER_HOME=${WORKDIR}/.gradle
+    export M2_HOME=${WORKDIR}/.m2
     ./bootstrap.sh
     econf \
         $(use_with pic) \
         $(use_with gnu-ld) \
         $(use_with cpp) \
         $(use_with boost) \
+        $(use_with boostthreads) \
         $(use_with libevent) \
         $(use_with zlib) \
         $(use_with qt4) \
+        $(use_with qt5) \
         $(use_with c_glib) \
         $(use_with csharp) \
         $(use_with java) \
@@ -81,5 +100,13 @@ src_configure() {
         $(use_with ruby) \
         $(use_with haskell) \
         $(use_with go) \
-        $(use_with d)
+        $(use_with d) \
+        $(use_with haxe) \
+        $(use_with nodejs) \
+        $(use_with dart) \
+        $(use_with lua) \
+        $(use_enable tutorial) \
+        $(use_enable test tests) \
+        $(use_enable test coverage) \
+        $(use_enable static-libs static)
 }
