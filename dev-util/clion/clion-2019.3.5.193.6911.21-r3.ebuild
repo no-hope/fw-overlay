@@ -47,7 +47,7 @@ src_install() {
     for type in config system; do
       local prop="idea.${type}.path=\${user.home}"
       local expr="${prop}/.CLion/${type}"
-      local repl="${prop}/.IntelliJ/CLion$(ver_cut 1-2)/${type}"
+      local repl="${prop}/.intellij/clion-$(ver_cut 1-2)/${type}"
       sed -e "\|# ${expr}|{s||${repl}|;h};\${x;/./{x;q42};x}" \
           -i bin/idea.properties
       if [[ $? != 42 ]]; then
