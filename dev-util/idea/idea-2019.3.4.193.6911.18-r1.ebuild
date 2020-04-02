@@ -33,8 +33,8 @@ SHORT_PV="$(ver_cut 1-2)"
 S="${WORKDIR}/${PN}-IU-${MY_PV}"
 
 src_unpack() {
-    unpack ${A}
-    mv ${WORKDIR}/${PN}-IU-* ${WORKDIR}/${PN}-IU-${MY_PV}
+	unpack ${A}
+	mv ${WORKDIR}/${PN}-IU-* ${S}
 }
 
 src_prepare() {
@@ -53,6 +53,17 @@ src_prepare() {
 src_install() {
 	local dir="/opt/${P}"
 	local exe="${PN}-${SLOT}"
+
+	for type in config system; do
+		local prop="idea.${type}.path=\${user.home}"
+		local expr="${prop}/.IntelliJIdea/${type}"
+		local repl="${prop}/.IntelliJ/Idea$(ver_cut 1-2)/${type}"
+		sed -e "\|# ${expr}|{s||${repl}|;h};\${x;/./{x;q42};x}" \
+			-i bin/idea.properties
+		if [[ $? != 42 ]]; then
+			die "unable to modify idea.${type}.path property in idea.properties"
+		fi
+	done
 
 	newconfd "${FILESDIR}/config-${SLOT}" idea-${SLOT} || die
 
