@@ -35,9 +35,8 @@ S="${WORKDIR}/${PN}-${PV}"
 
 src_unpack() {
     unpack ${A}
-    mv ${WORKDIR}/${PN}-* ${WORKDIR}/${PN}-${PV} || die
+    mv ${WORKDIR}/${PN}-* ${S} || die
 }
-
 
 src_install() {
     local dir="/opt/${P}"
@@ -45,12 +44,21 @@ src_install() {
 
     insinto "${dir}"
 
-    sed -e "s|^message()|source /etc/conf.d/clion\n\nmessage()|" \
-        -i bin/${PN}.sh || die "Unable to patch startup script"
+    for type in config system; do
+      local prop="idea.${type}.path=\${user.home}"
+      local expr="${prop}/.CLion/${type}"
+      local repl="${prop}/.IntelliJ/CLion$(ver_cut 1-2)/${type}"
+      sed -e "\|# ${expr}|{s||${repl}|;h};\${x;/./{x;q42};x}" \
+          -i bin/idea.properties
+      if [[ $? != 42 ]]; then
+          die "unable to modify idea.${type}.path property in idea.properties"
+      fi
+    done
 
     # [[ -d "jre" ]] && rm -rf jre || die "no embedded jre found"
 
     doins -r *
+
 
     fperms 755 "${dir}/bin/${PN}.sh" || die
     fperms 755 "${dir}/bin/format.sh" || die
