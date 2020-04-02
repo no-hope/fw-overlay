@@ -9,4 +9,4 @@ RESTRICT=strip mirror
 SLOT=0
 SRC_URI=https://download.jetbrains.com/cpp/CLion-2019.3.5.tar.gz -> clion-2019.3.5.193.6911.21.tar.gz
 _eclasses_=desktop	7fd20552ce4cc97e8acb132a499a7dd8	eutils	fcb2aa98e1948b835b5ae66ca52868c5
-_md5_=aabfb204c2218f6b36d0c246baa02bda
+_md5_=0398616f6be720557638d9cbfc0bb93f
