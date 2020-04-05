@@ -1,0 +1,12 @@
+DEFINED_PHASES=install
+DESCRIPTION=A cross-platform C# IDE based on the IntelliJ platform and ReSharper
+EAPI=7
+HOMEPAGE=https://www.jetbrains.com/rider/
+KEYWORDS=~* amd64
+LICENSE=Rider-IDEA
+RDEPEND=>=virtual/jdk-1.6
+RESTRICT=strip mirror
+SLOT=0
+SRC_URI=http://download.jetbrains.com/rider/JetBrains.Rider-2019.3.4.tar.gz -> rider-2019.3.4.193.6494.48.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5
+_md5_=5fb4b57b3797c2ddd691c1ef554f8d05
