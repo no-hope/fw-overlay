@@ -1,1 +1,1 @@
-RS_JDK="$(java-config -O)"
+# RS_JDK="$(java-config -O)"
