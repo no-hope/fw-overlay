@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=7
-inherit eutils
+inherit eutils desktop
 
 SLOT="0"
 RDEPEND=">=virtual/jdk-1.6"
@@ -47,12 +47,18 @@ src_install() {
     doins -r *
 
     fperms 755 "${dir}"/bin/fsnotifier{,64} || die
-    fperms 755 "${dir}"/bin/{inspect,format}.sh || die
-    fperms 755 "${dir}"/bin/{printenv,restart}.py || die
+    fperms 755 "${dir}"/jbr/bin/* || die
+    fperms 755 "${dir}"/jbr/lib/{jexec,jspawnhelper}
 
-    find "${dir}" -name '*.sh' -exec fperms 755 {} +
-    find "${dir}/lib/ReSharperHost" -name '*.so' -exec fperms 755 {} +
-    find "${dir}/lib/ReSharperHost/linux-x64/mono/bin" -type f -exec fperms 755 {} +
+    find "${dir}" \( \
+      -name '*.sh' -or \
+      -name '*.py' -or \
+      -name '*.so' -or \
+      -name '*.exe' -or \
+      -name '*.dll' \
+    \) -exec fperms 755 {} +
+
+    fperms 755 "${dir}"/lib/ReSharperHost/linux-x64/mono/bin/*
 
     newicon "bin/rider.png" "${exe}.png"
     make_wrapper "${exe}" "/opt/${P}/bin/${PN}.sh"
