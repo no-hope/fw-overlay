@@ -95,7 +95,7 @@ src_install() {
 	fperms 755 "${dir}/bin/fsnotifier" || die
 	fperms 755 "${dir}/bin/fsnotifier64" || die
 
-	fperms 755 "${dir}"/jbr/bin/* || die
+	fperms -R 755 "${dir}"/jbr/bin/ || die
 	fperms 755 "${dir}"/jbr/lib/{jexec,jspawnhelper}
 
 	newicon "bin/${PN}.png" "${exe}.png" || die
