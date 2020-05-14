@@ -1,0 +1,10 @@
+--- a/bin/idea.sh	2020-04-13 16:19:12.906484598 +0300
++++ b/bin/idea.sh	2020-04-13 16:19:57.026484418 +0300
+@@ -38,6 +38,7 @@
+ # shellcheck disable=SC2034
+ GREP_OPTIONS=''
+ OS_TYPE=$("$UNAME" -s)
++. /etc/conf.d/idea-2020
+ 
+ # ---------------------------------------------------------------------
+ # Ensure $IDE_HOME points to the directory where the IDE is installed.
