@@ -10,5 +10,5 @@ RDEPEND=dev-util/patchelf pulseaudio? ( media-sound/pulseaudio[alsa?] ) dev-db/s
 RESTRICT=mirror preserve-libs split
 SLOT=0
 SRC_URI=amd64? ( https://zoom.us/client/3.5.361976.0301/zoom_amd64.deb -> zoom-3.5.361976.0301_amd64.deb ) x86? ( https://zoom.us/client/3.5.361976.0301/zoom_i386.deb -> zoom-3.5.361976.0301_x86.deb )
-_eclasses_=pax-utils	a41d1fd1c111289ffa04490de6ee79d7	unpacker	3cd8bad0d31e525cd26be1bfa4e61631	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
+_eclasses_=pax-utils	a41d1fd1c111289ffa04490de6ee79d7	unpacker	b5891c9326ad2e7905c011d44c927c34	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
 _md5_=896a724083c010153d4b7129927e448d
