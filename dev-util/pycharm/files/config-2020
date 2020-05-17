@@ -1,0 +1,4 @@
+#_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+#PYCHARM_JDK="$(java-config --select-vm=icedtea-8 -O)"
+PYCHARM_VM_OPTIONS="/etc/pycharm/pycharm-2020.vmoptions"
+PYCHARM_PROPERTIES="/etc/pycharm/pycharm-2020.properties"

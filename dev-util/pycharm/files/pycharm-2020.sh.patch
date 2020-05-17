@@ -1,0 +1,10 @@
+--- a/bin/pycharm.sh	2020-05-15 20:03:03.307235554 +0300
++++ b/bin/pycharm.sh	2020-05-15 20:04:36.387235174 +0300
+@@ -38,6 +38,7 @@
+ # shellcheck disable=SC2034
+ GREP_OPTIONS=''
+ OS_TYPE=$("$UNAME" -s)
++. /etc/conf.d/pycharm-2020
+ 
+ # ---------------------------------------------------------------------
+ # Ensure $IDE_HOME points to the directory where the IDE is installed.
