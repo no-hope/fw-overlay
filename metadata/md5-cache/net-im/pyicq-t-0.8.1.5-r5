@@ -10,5 +10,5 @@ LICENSE=GPL-2
 RDEPEND=net-im/jabber-base dev-python/twisted-core dev-python/twisted-words dev-python/twisted-web webinterface? ( >=dev-python/nevow-0.4.1 ) postgres? ( >=dev-db/pygresql-3.8.1 ) systemd? ( sys-apps/systemd ) virtual/python-imaging
 SLOT=patched
 SRC_URI=http://pyicqt.googlecode.com/files/pyicqt-0.8.1.5.tar.gz
-_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	multilib	318e8ae683e57fd3ccd0d31a769d8ee8	python-single-r1	2d2617a730e75e491e1d17af87841ec5	python-utils-r1	dd532a387632f19bfc5523fc2289a9a0	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	multilib	2477ebe553d3e4d2c606191fe6c33602	python-single-r1	2d2617a730e75e491e1d17af87841ec5	python-utils-r1	ace0a9a129fcfeaae542c0d15c07f36a	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=8c990270052c26d8b36ef2eae5014460

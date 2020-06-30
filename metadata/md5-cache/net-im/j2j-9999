@@ -1,4 +1,4 @@
-BDEPEND=|| ( dev-vcs/subversion[http] dev-vcs/subversion[webdav-neon] dev-vcs/subversion[webdav-serf] ) net-misc/rsync
+BDEPEND=dev-vcs/subversion[http(+)] net-misc/rsync
 DEFINED_PHASES=install postinst preinst setup unpack
 DEPEND=net-im/jabber-base
 DESCRIPTION=Jabber2Jabber Transport
@@ -10,5 +10,5 @@ LICENSE=GPL-2
 PROPERTIES=live
 RDEPEND=net-im/jabber-base dev-python/twisted-core dev-python/twisted-words dev-python/twisted-names postgres? ( !mysql? ( >=dev-db/pygresql-4.1.1-r1 ) ) mysql? ( !postgres? ( >=dev-db/mysql-4.1 ) )
 SLOT=0
-_eclasses_=estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	multilib	318e8ae683e57fd3ccd0d31a769d8ee8	python-single-r1	2d2617a730e75e491e1d17af87841ec5	python-utils-r1	dd532a387632f19bfc5523fc2289a9a0	subversion	4beaac7ba954403d7bbe4d4b8befdb82	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_eclasses_=estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	multilib	2477ebe553d3e4d2c606191fe6c33602	python-single-r1	2d2617a730e75e491e1d17af87841ec5	python-utils-r1	ace0a9a129fcfeaae542c0d15c07f36a	subversion	ed3498da4fb92dcfb0d6089c85d1465f	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=51cd2c4a7e24ea9da077c81e9566bd9b
