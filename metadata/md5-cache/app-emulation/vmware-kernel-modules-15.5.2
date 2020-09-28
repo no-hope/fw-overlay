@@ -1,14 +1,14 @@
 BDEPEND=virtual/pkgconfig
 DEFINED_PHASES=compile install postinst postrm preinst prepare setup
-DEPEND=kernel_linux? ( virtual/modutils ) sys-apps/sed kernel_linux? ( virtual/linux-sources virtual/libelf )
+DEPEND=kernel_linux? ( sys-apps/kmod[tools] ) sys-apps/sed kernel_linux? ( virtual/linux-sources virtual/libelf )
 DESCRIPTION=VMware kernel modules
 EAPI=7
 HOMEPAGE=https://github.com/mkubecek/vmware-host-modules
 IUSE=kernel_linux kernel_linux kernel_linux
 KEYWORDS=~* amd64
 LICENSE=GPL-2
-RDEPEND=kernel_linux? ( virtual/modutils )
+RDEPEND=kernel_linux? ( sys-apps/kmod[tools] )
 SLOT=0
 SRC_URI=https://github.com/mkubecek/vmware-host-modules/archive/w15.5.2-k5.5.zip -> vmware-kernel-modules-15.5.2-5.5.zip
-_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	f1194291b9a1baca337c1c89b5f7f365	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	linux-mod	9991808b521b5a8c569c9c4ccf8893f6	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	udev	452708c3f55cf6e918b045adb949a9e6	user	7b7fc6ec5eb1c1eee55b0609f01e7362	user-info	a2abd4e2f4c3b9b06d64bf1329359a02
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	2d5b3f4b315094768576b6799e4f926e	flag-o-matic	09a8beb8e6a8e02dc1e1bd83ac353741	l10n	8cdd85e169b835d518bc2fd59f780d8e	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	linux-mod	63c06dfa12648f13855f5f4348af824c	multilib	98584e405e2b0264d37e8f728327fed1	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	udev	452708c3f55cf6e918b045adb949a9e6	user	7b7fc6ec5eb1c1eee55b0609f01e7362	user-info	a2abd4e2f4c3b9b06d64bf1329359a02	wrapper	4251d4c84c25f59094fd557e0063a974
 _md5_=ae7a8e60b54ab035626a747163d24c60

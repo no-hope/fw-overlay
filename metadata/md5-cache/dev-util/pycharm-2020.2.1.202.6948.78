@@ -7,6 +7,6 @@ LICENSE=IntelliJ-IDEA
 RDEPEND=>=virtual/jdk-1.7
 RESTRICT=strip mirror
 SLOT=2020
-SRC_URI=https://download.jetbrains.com/python/pycharm-professional-2020.1.3.tar.gz
+SRC_URI=https://download.jetbrains.com/python/pycharm-professional-2020.2.1.tar.gz
 _eclasses_=desktop	7fd20552ce4cc97e8acb132a499a7dd8	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	2d5b3f4b315094768576b6799e4f926e	fwutils	f0aa875b6434c360f9e6e0a576883af6	gnome2-utils	893e828f0f25f070f0b38d20c83c7670	l10n	8cdd85e169b835d518bc2fd59f780d8e	wrapper	4251d4c84c25f59094fd557e0063a974	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
 _md5_=f0865d0638bf8990331a9c456dbefc8c
