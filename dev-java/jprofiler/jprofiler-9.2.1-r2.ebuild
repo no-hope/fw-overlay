@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=7
-inherit eutils
+inherit eutils desktop
 
 SLOT="$(ver_cut 1-2)"
 RDEPEND=">=virtual/jdk-1.6"
@@ -17,8 +17,10 @@ LICENSE="jprofiler"
 IUSE=""
 KEYWORDS="amd64"
 MV="$(ver_cut 1)"
-S="${WORKDIR}/jprofiler${PV}"
+S="${WORKDIR}/jprofiler${MV}"
 INSTALL_DIR="/opt/${PN}-${PV}"
+
+QA_TEXTRELS="opt/${PN}-${PV}/bin/*/libjprofilerti.so"
 
 src_prepare(){
        ARCH=$(uname -m)
@@ -28,7 +30,7 @@ src_prepare(){
        [[ "${ARCH:0:3}" = "arm" ]] || rm -r "${S}/bin/linux-arm" "${S}/bin/linux-armhf"
        [[ "${ARCH:0:3}" = "ppc" ]] || rm -r "${S}/bin/linux-ppc" "${S}/bin/linux-ppc64"
 
-       epatch_user
+       eapply_user
 }
 
 src_install() {
