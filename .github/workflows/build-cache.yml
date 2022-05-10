@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: "Run in chroot"
         if: ${{ github.event_name != 'pull_request' }}
-        run: sudo -E ./scripts/create_chroot.sh
+        run: sudo -E bash -c "scripts/create_chroot.sh"
         env:
           TRAVIS_BRANCH: ${{ github.ref_name }}
           TRAVIS_PULL_REQUEST: false
