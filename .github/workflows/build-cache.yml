@@ -11,3 +11,4 @@ jobs:
         env:
           TRAVIS_BRANCH: ${{ github.ref_name }}
           TRAVIS_PULL_REQUEST: false
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
