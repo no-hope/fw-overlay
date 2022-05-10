@@ -2,11 +2,12 @@ DEFINED_PHASES=install prepare
 DESCRIPTION=JProfiler java profiling tool
 EAPI=7
 HOMEPAGE=http://www.ej-technologies.com/products/jprofiler/overview.html
+INHERIT=eutils desktop
 KEYWORDS=amd64
 LICENSE=jprofiler
 RDEPEND=>=virtual/jdk-1.6
 RESTRICT=strip
 SLOT=10.0
 SRC_URI=http://download-gcdn.ej-technologies.com/jprofiler/jprofiler_linux_10_0.tar.gz
-_eclasses_=desktop	7fd20552ce4cc97e8acb132a499a7dd8	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	2d5b3f4b315094768576b6799e4f926e	l10n	8cdd85e169b835d518bc2fd59f780d8e	wrapper	4251d4c84c25f59094fd557e0063a974
+_eclasses_=desktop	c0d27bf73aa08ca05b663dbd31fbef28	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	dab5d8ec471d025b79c9e6906bcf3bff	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c
 _md5_=d0ae3d85b4afb64856f73cc3e31d5398

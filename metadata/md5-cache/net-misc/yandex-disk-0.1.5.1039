@@ -1,13 +1,14 @@
 DEFINED_PHASES=install unpack
-DEPEND=sys-libs/zlib >=app-arch/rpm2targz-9.0.0.3g
+DEPEND=sys-libs/zlib app-arch/rpm2targz
 DESCRIPTION=Yandex.Disk official client
 EAPI=5
 HOMEPAGE=http://disk.yandex.com/
+INHERIT=rpm bash-completion-r1
 IUSE=bash-completion linguas_ru linguas_uk linguas_tr
 KEYWORDS=x86 amd64
 RDEPEND=sys-libs/zlib
 RESTRICT=mirror
 SLOT=0
 SRC_URI=x86? ( http://repo.yandex.ru/yandex-disk/rpm/stable/i386/yandex-disk-0.1.5.1039-1.fedora.i386.rpm ) amd64? ( http://repo.yandex.ru/yandex-disk/rpm/stable/x86_64/yandex-disk-0.1.5.1039-1.fedora.x86_64.rpm )
-_eclasses_=bash-completion-r1	e5f9c3faab3ab3d1e7e007daa8c736ef	desktop	7fd20552ce4cc97e8acb132a499a7dd8	edos2unix	33e347e171066657f91f8b0c72ec8773	epatch	e8f1ec13660dc2f44b32775765d85e42	estack	686eaab303305a908fd57b2fd7617800	eutils	2d5b3f4b315094768576b6799e4f926e	l10n	8cdd85e169b835d518bc2fd59f780d8e	ltprune	4f3f2db5ce3ccbeeacdf3f94954043aa	multilib	d410501a125f99ffb560b0c523cd3d1e	preserve-libs	ef207dc62baddfddfd39a164d9797648	rpm	760ff223c2c4299b68ea901e24c4cabd	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	wrapper	4251d4c84c25f59094fd557e0063a974
+_eclasses_=bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	desktop	c0d27bf73aa08ca05b663dbd31fbef28	edos2unix	33e347e171066657f91f8b0c72ec8773	epatch	9f813bb3c47cf2e60619a663b87c5f4e	estack	055c42df72f76a4f45ec92b35e83cd56	eutils	dab5d8ec471d025b79c9e6906bcf3bff	ltprune	97143780d341cc8d8f1d4c6187a36d29	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	preserve-libs	a8e50acee31b5759b4df1f7707cae54b	rpm	f73e907469f65e52192f110dec72dce0	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	vcs-clean	d271b7bc7e6a009758d7d4ef749174e3	wrapper	4a1902f969e5718126434fc35f3a0d9c
 _md5_=6d8fad89d5d601c4f37d3a42b5869bf0

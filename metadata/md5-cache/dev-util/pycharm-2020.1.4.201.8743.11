@@ -2,11 +2,12 @@ DEFINED_PHASES=install postinst postrm preinst prepare unpack
 DESCRIPTION=The Python IDE for Professional Developers
 EAPI=7
 HOMEPAGE=https://www.jetbrains.com/pycharm/
+INHERIT=eutils desktop fwutils
 KEYWORDS=~x86 amd64
 LICENSE=IntelliJ-IDEA
 RDEPEND=>=virtual/jdk-1.7
 RESTRICT=strip mirror
 SLOT=2020
 SRC_URI=https://download.jetbrains.com/python/pycharm-professional-2020.1.4.tar.gz
-_eclasses_=desktop	7fd20552ce4cc97e8acb132a499a7dd8	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	2d5b3f4b315094768576b6799e4f926e	fwutils	f0aa875b6434c360f9e6e0a576883af6	gnome2-utils	893e828f0f25f070f0b38d20c83c7670	l10n	8cdd85e169b835d518bc2fd59f780d8e	wrapper	4251d4c84c25f59094fd557e0063a974	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
+_eclasses_=desktop	c0d27bf73aa08ca05b663dbd31fbef28	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	dab5d8ec471d025b79c9e6906bcf3bff	fwutils	39d0fe2a118415912bb3587683ab1f3b	gnome2-utils	2116cec8f46f4d1b0a88c5b1f1575dd3	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	wrapper	4a1902f969e5718126434fc35f3a0d9c	xdg-utils	fffb53a53cf17c9c0c998a3c0a590c7e
 _md5_=f0865d0638bf8990331a9c456dbefc8c

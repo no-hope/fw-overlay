@@ -1,9 +1,10 @@
 BDEPEND=virtual/pkgconfig
 DEFINED_PHASES=config install postinst postrm preinst prepare setup unpack
-DEPEND=|| ( dev-lang/python:3.9 dev-lang/python:3.8 dev-lang/python:3.7 dev-lang/python:3.6 ) >=dev-util/patchelf-0.9 modules? ( ~app-emulation/vmware-modules-16.0.0 ) ovftool? ( app-admin/chrpath )
+DEPEND=|| ( >=dev-lang/python-3.9.9-r1:3.9 >=dev-lang/python-3.8.12_p1-r1:3.8 ) >=dev-util/patchelf-0.9 modules? ( ~app-emulation/vmware-modules-16.0.0 ) ovftool? ( app-admin/chrpath )
 DESCRIPTION=Emulate a complete PC without the performance overhead of most emulators
 EAPI=7
 HOMEPAGE=http://www.vmware.com/products/workstation/
+INHERIT=eutils readme.gentoo-r1 gnome2-utils pam python-any-r1 systemd xdg-utils
 IUSE=cups doc macos-guests +modules ovftool systemd vix vmware-tools-darwin vmware-tools-darwinPre15 vmware-tools-linux vmware-tools-linuxPreGlibc25 vmware-tools-netware vmware-tools-solaris vmware-tools-windows vmware-tools-winPre2k vmware-tools-winPreVista
 KEYWORDS=~* amd64
 LICENSE=GPL-2 GPL-3 MIT-with-advertising vmware
@@ -12,5 +13,5 @@ REQUIRED_USE=vmware-tools-darwin? ( macos-guests ) vmware-tools-darwinPre15? ( m
 RESTRICT=mirror preserve-libs strip
 SLOT=0
 SRC_URI=https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-16.0.0-16894299.x86_64.bundle macos-guests? ( https://github.com/paolo-projects/unlocker/archive/3.0.3.tar.gz -> unlocker-3.0.3.tar.gz vmware-tools-darwinPre15? ( https://softwareupdate.vmware.com/cds/vmw-desktop/fusion/11.5.6/16696540/core/com.vmware.fusion.zip.tar -> com.vmware.fusion-16.0.0.16894299.zip.tar ) vmware-tools-darwin? ( https://softwareupdate.vmware.com/cds/vmw-desktop/fusion/11.5.6/16696540/core/com.vmware.fusion.zip.tar -> com.vmware.fusion-16.0.0.16894299.zip.tar ) ) systemd? ( https://github.com/akhuettel/systemd-vmware/archive/gentoo-02.tar.gz -> vmware-systemd-gentoo-02.tgz )
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	2d5b3f4b315094768576b6799e4f926e	flag-o-matic	09a8beb8e6a8e02dc1e1bd83ac353741	gnome2-utils	893e828f0f25f070f0b38d20c83c7670	l10n	8cdd85e169b835d518bc2fd59f780d8e	multilib	d410501a125f99ffb560b0c523cd3d1e	pam	226d8d2ff588bdfd7d188512dbdb189d	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	e41e32d357e5bdd388b5be2ce24f3883	readme.gentoo-r1	22ae82e140bdd95d17a34fd5fd733190	systemd	69be00334d73f9f50261554b94be0879	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	wrapper	4251d4c84c25f59094fd557e0063a974	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
+_eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	dab5d8ec471d025b79c9e6906bcf3bff	flag-o-matic	a500d7cc40da3de38c361e889153bdf7	gnome2-utils	2116cec8f46f4d1b0a88c5b1f1575dd3	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	pam	e44a1dd98f13e1ad76de01e919bde1f1	python-any-r1	9006edf4b9c90f9ba1dc9ea9fee1b0bd	python-utils-r1	c44a1c362b7660d46c7a67c553e589c3	readme.gentoo-r1	b776ad4b42f564c406a95c41ccb42c55	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	systemd	2736b403a83f194b59b767f3b344c2c1	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	wrapper	4a1902f969e5718126434fc35f3a0d9c	xdg-utils	fffb53a53cf17c9c0c998a3c0a590c7e
 _md5_=3392116887a2da1dd23092437acdbe72
