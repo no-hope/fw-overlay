@@ -201,12 +201,15 @@ fw_make_desktop_entry() {
 
 pkg_preinst() {
 	gnome2_icon_savelist
+	xdg_icon_cache_update
 }
 
 pkg_postinst() {
-	gnome2_icon_cache_update
+	xdg_desktop_database_update
+	xdg_icon_cache_update
 }
 
 pkg_postrm() {
 	gnome2_icon_cache_update
+	xdg_icon_cache_update
 }

@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
-inherit eutils user systemd versionator
+EAPI=7
+inherit eutils user systemd
 
 DESCRIPTION="The Apache Cassandra database is the right choice when you need
 scalability and high availability without compromising performance."
@@ -11,7 +11,7 @@ HOMEPAGE="http://cassandra.apache.org/"
 SRC_URI="mirror://apache/cassandra/${PV}/apache-cassandra-${PV}-bin.tar.gz"
 
 LICENSE="Apache-2.0"
-SLOT="$(get_version_component_range 1-2)"
+SLOT="$(ver_cut 1-2)"
 KEYWORDS="~x86 ~amd64"
 IUSE="systemd"
 
