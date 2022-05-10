@@ -17,7 +17,7 @@ git config remote.origin.url "$(git config --get remote.origin.url | sed "s|git:
 git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 echo "Merging develop -> master..."
-git pull origin master --allow-unrelated-histories
+git fetch origin master
 git checkout -t origin/master
 git merge -X theirs --no-ff --no-edit develop
 
