@@ -4,9 +4,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: "Run in chroot"
         if: ${{ github.event_name != 'pull_request' }}
-        run: sudo -E bash -c "scripts/create_chroot.sh"
+        run: sudo -E scripts/create_chroot.sh
         env:
           TRAVIS_BRANCH: ${{ github.ref_name }}
           TRAVIS_PULL_REQUEST: false
