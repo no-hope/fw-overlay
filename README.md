@@ -1,6 +1,6 @@
 #Gentoo overlay#
 
-[![Master Build Status](https://travis-ci.org/no-hope/fw-overlay.svg?branch=master)](https://travis-ci.org/no-hope/fw-overlay)
+[![Master Build Status](https://github.com/no-hope/fw-overlay/actions/workflows/build-cache.yml/badge.svg)](https://github.com/no-hope/fw-overlay)
 
 Yet another overlay full of very useful ebuilds :-)
 
