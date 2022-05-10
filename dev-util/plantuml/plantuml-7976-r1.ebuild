@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI=7
 EANT_BUILD_TARGET="dist"
-inherit eutils versionator java-pkg-2 java-ant-2
+inherit eutils java-pkg-2 java-ant-2
 
 SLOT="0"
 DEPEND="
