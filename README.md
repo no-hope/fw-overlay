@@ -1,10 +1,10 @@
-#Gentoo overlay#
+# Gentoo overlay
 
 [![Master Build Status](https://github.com/no-hope/fw-overlay/actions/workflows/build-cache.yml/badge.svg)](https://github.com/no-hope/fw-overlay)
 
 Yet another overlay full of very useful ebuilds :-)
 
-##Developer guile##
+## Developer guile
 
 Development allowed for `development` branch only. To avoid naming clash with existing `fw-overlay` instance you may follow next steps:
 
