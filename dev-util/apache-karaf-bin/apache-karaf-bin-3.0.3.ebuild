@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
-inherit eutils user systemd versionator
+EAPI=7
+inherit eutils user systemd
 MY_PV="${PV/_rc/.M}"
 
 DESCRIPTION="
@@ -15,7 +15,7 @@ HOMEPAGE="https://karaf.apache.org/"
 SRC_URI="mirror://apache/karaf/${MY_PV}/apache-karaf-${MY_PV}.tar.gz"
 
 LICENSE="Apache-2.0"
-SLOT="$(get_version_component_range 1-2)"
+SLOT="$(ver_cut 1-2)"
 KEYWORDS="~x86 ~amd64"
 IUSE="systemd"
 
