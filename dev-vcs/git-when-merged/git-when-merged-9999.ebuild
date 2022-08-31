@@ -2,21 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
-PYTHON_COMPAT=( python2_7 python3_{3,4} )
+EAPI=7
+PYTHON_COMPAT=( python2_7 python3_{10,11,12} )
 
-inherit eutils versionator git-r3
+inherit eutils
 
 DESCRIPTION="Find when a commit was merged into one or more branches."
 HOMEPAGE="https://github.com/mhagger/git-when-merged"
-EGIT_REPO_URI="https://github.com/mhagger/git-when-merged"
 
 if [[ ${PV} == 9999* ]] ; then
-    KEYWORDS="-*"
+    inherit git-r3
+    EGIT_REPO_URI="https://github.com/mhagger/git-when-merged"
+    KEYWORDS=""
 else
-    # second version comonent is a ebuild sequential number, third version
-    # component is a dec-encoded 8 hex digits of commit hash
-    EGIT_COMMIT="$(printf "%08x" $(get_version_component_range 3))"
+    SRC_URI="https://github.com/mhagger/git-when-merged/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
     KEYWORDS="amd64 x86"
 fi
 
@@ -32,6 +31,7 @@ INSTALL_DIR=/usr/libexec/git-core/
 
 src_install() {
     insinto "${INSTALL_DIR}"
-    doins bin/${PN} || die
+    mv src/${PN//-/_}.py src/${PN} || die
+    doins src/${PN} || die
     fperms 755 ${INSTALL_DIR}/${PN}
 }

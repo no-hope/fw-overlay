@@ -2,15 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI=7
 
-inherit eutils versionator fwutils
+inherit eutils fwutils
 
 DESCRIPTION="Sublime Text is a sophisticated text editor for code, html and prose"
 HOMEPAGE="http://www.sublimetext.com"
 
-SLOT="$(get_major_version)"
-BUILD="$(get_version_component_range 2-2)"
+SLOT="$(ver_cut 1)"
+BUILD="$(ver_cut 2-2)"
 
 get_uri() {
     echo "https://download.sublimetext.com/sublime_text_${SLOT}_build_${BUILD}_${1}.tar.bz2 -> ${P}_${2}.tar.bz2"
@@ -27,7 +27,7 @@ IUSE=""
 RDEPEND="x11-libs/gtk+:2"
 RESTRICT="mirror"
 
-INSTALL_DIR="/opt/${PN}-$(get_major_version)"
+INSTALL_DIR="/opt/${PN}-${SLOT}"
 
 S=${WORKDIR}/"sublime_text_3"
 

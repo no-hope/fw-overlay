@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
-inherit eutils versionator git-r3
+EAPI=7
+inherit eutils git-r3
 
 SLOT="0"
 
