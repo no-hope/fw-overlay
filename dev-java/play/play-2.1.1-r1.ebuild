@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI=7
 
-inherit eutils versionator
+inherit eutils
 
 DESCRIPTION="The High Velocity Web Framework For Java and Scala"
 HOMEPAGE="http://www.playframework.com/"
@@ -13,7 +13,7 @@ SRC_URI="http://downloads.typesafe.com/play/${PV}/play-${PV}.zip"
 
 LICENSE="Apache-2.0"
 KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos"
-SLOT="$(get_major_version)"
+SLOT="$(ver_cut 1)"
 IUSE=""
 RESTRICT="mirror"
 

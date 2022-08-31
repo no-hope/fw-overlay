@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
-inherit eutils versionator
+inherit eutils
 
 RNAME="luna"
 
@@ -14,7 +14,7 @@ DESCRIPTION="Eclipse IDE for Java EE Developers"
 HOMEPAGE="http://www.eclipse.org"
 
 LICENSE="EPL-1.0"
-SLOT="$(get_version_component_range 1-2)"
+SLOT="$(ver_cut 1-2)"
 KEYWORDS="~amd64"
 IUSE=""
 

@@ -1,48 +1,49 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-JAVA_PKG_IUSE="doc source"
+EAPI=7
 
-inherit eutils java-pkg-2 java-ant-2 python-utils-r1 flag-o-matic
+JAVA_PKG_IUSE="doc source"
+MAVEN_ID="org.python:jython:2.7.0"
+
+inherit java-pkg-2 java-ant-2 python-utils-r1 flag-o-matic
 
 MY_PV=${PV/_beta/-b}
 MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="An implementation of Python written in Java"
-HOMEPAGE="http://www.jython.org"
-SRC_URI="http://search.maven.org/remotecontent?filepath=org/python/${PN}/${MY_PV}/${MY_P}-sources.jar"
+HOMEPAGE="https://www.jython.org"
+SRC_URI="https://search.maven.org/remotecontent?filepath=org/python/${PN}/${MY_PV}/${MY_P}-sources.jar"
 
 LICENSE="PSF-2"
 SLOT="2.7"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="amd64 ~arm arm64 ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="examples test"
 
 CP_DEPEND="dev-java/antlr:3
-	dev-java/netty-transport:0
-	>=dev-java/asm-5:4
+	dev-java/netty:0
+	dev-java/asm:9
 	dev-java/commons-compress:0
-	dev-java/guava:20
+	dev-java/guava:0
 	dev-java/jffi:1.2
 	dev-java/jline:2
-	dev-java/icu4j:52
+	dev-java/icu4j:70
 	dev-java/jnr-constants:0
 	dev-java/jnr-posix:3.0
 	dev-java/jnr-netdb:1.0
 	dev-java/stringtemplate:0
 	dev-java/xerces:2
-	java-virtuals/script-api:0
 	java-virtuals/servlet-api:3.0"
 RDEPEND="${CP_DEPEND}
-	>=virtual/jre-1.7"
+	>=virtual/jre-1.8:*"
 DEPEND="${CP_DEPEND}
-	>=virtual/jdk-1.7
-	app-arch/unzip
+	>=virtual/jdk-1.8:*
 	dev-java/ant-core:0
 	test? (
 		dev-java/junit:4
 		dev-java/ant-junit:0
 	)"
+BDEPEND="app-arch/unzip"
 
 S=${WORKDIR}
 
@@ -69,22 +70,6 @@ PATCHES=(
 	"${FILESDIR}"/CVE-2016-4000.patch
 )
 
-_python_domodule() {
-	debug-print-function ${FUNCNAME} "${@}"
-
-	[[ ${EPYTHON} ]] || die 'No Python implementation set (EPYTHON is null).'
-
-	local d=${PYTHON_SITEDIR#${EPREFIX}}/${python_moduleroot//.//}
-
-	(
-		insopts -m 0644
-		insinto "${d}"
-		doins -r "${@}" || return ${?}
-	)
-
-	python_optimize "${ED%/}/${d}"
-}
-
 src_prepare() {
 	default
 
@@ -93,6 +78,10 @@ src_prepare() {
 
 	# needed for launchertest
 	chmod +x tests/shell/test-jython.sh || die
+
+	# https://bugs.gentoo.org/show_bug.cgi?id=833785
+	sed -e 's:\(CharMatcher.\)ASCII:\1ascii():' \
+		-i src/org/python/core/Py{,BaseCode,Unicode}.java || die
 
 	java-pkg-2_src_prepare
 }
@@ -149,8 +138,7 @@ src_install() {
 	local -x PYTHON="${T}"/jython
 	# we can't get the path from the interpreter since it does some
 	# magic that fails on non-installed copy...
-	local PYTHON_SITEDIR=${EPREFIX}/usr/share/jython-${SLOT}/Lib/site-packages
-	python_export jython${SLOT} EPYTHON
+	_python_export jython${SLOT} EPYTHON
 
 	# compile tests (everything else is compiled already)
 	# we're keeping it quiet since jython reports errors verbosely
@@ -159,7 +147,8 @@ src_install() {
 
 	# for python-exec
 	echo "EPYTHON='${EPYTHON}'" > epython.py || die
-	_python_domodule epython.py
+	python_moduleinto "/usr/share/jython-${SLOT}/Lib/site-packages"
+	python_domodule epython.py
 
 	# some of the class files end up with newer timestamps than the files they
 	# were generated from, make sure this doesn't happen

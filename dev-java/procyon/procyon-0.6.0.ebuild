@@ -2,16 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
-inherit eutils versionator
+EAPI=7
+inherit eutils
 
 SLOT="0"
-RDEPEND=">=virtual/jdk-1.6"
+RDEPEND=">=virtual/jdk-11"
 
 DESCRIPTION="Java decompiler, inspired by (and borrowed heavily from) ILSpy and Mono.Cecil"
 
-HOMEPAGE="https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler"
-SRC_URI="https://bitbucket.org/mstrobel/procyon/downloads/procyon-decompiler-${PV}.jar -> ${P}.jar"
+HOMEPAGE="https://github.com/mstrobel/procyon"
+SRC_URI="https://github.com/mstrobel/procyon/releases/download/v0.6.0/procyon-decompiler-${PV}.jar -> ${P}.jar"
 IUSE=""
 KEYWORDS="~x86 ~amd64"
 S="${WORKDIR}"
