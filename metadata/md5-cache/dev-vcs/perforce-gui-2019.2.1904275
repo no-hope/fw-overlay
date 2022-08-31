@@ -9,5 +9,5 @@ LICENSE=perforce
 RESTRICT=mirror strip test
 SLOT=0
 SRC_URI=amd64? ( http://ftp.perforce.com/perforce/r19.2/bin.linux26x86_64/p4v.tgz -> perforce-gui-2019.2.1904275-amd64.tgz )
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	dab5d8ec471d025b79c9e6906bcf3bff	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	8f942ebdcf04334697649d4a0bf65a32	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c
 _md5_=c4d4e7c17a2f0c107d84ae1712fce5d9

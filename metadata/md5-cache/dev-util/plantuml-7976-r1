@@ -10,5 +10,5 @@ RDEPEND=>=virtual/jdk-1.6 >=media-gfx/graphviz-2.26.3 >=dev-java/java-config-2.2
 RESTRICT=strip
 SLOT=0
 SRC_URI=mirror://sourceforge/plantuml/plantuml-7976.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	dab5d8ec471d025b79c9e6906bcf3bff	java-ant-2	5cf479aa9e0ac9cc55899f2762c2aaa0	java-pkg-2	3b09e051fc2045a0f0b9471b87d4f8bd	java-utils-2	e38ea02d8ed864a74078ecf46aa06f30	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	wrapper	4a1902f969e5718126434fc35f3a0d9c
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	8f942ebdcf04334697649d4a0bf65a32	java-ant-2	5cf479aa9e0ac9cc55899f2762c2aaa0	java-pkg-2	3b09e051fc2045a0f0b9471b87d4f8bd	java-utils-2	c79d65661a9f4f72b60376c9e4b3dfa1	multilib	5ca4e49abed8e3a2f7b56920eadee157	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	toolchain-funcs	1542e649be915f43f6908a9e93909961	wrapper	4a1902f969e5718126434fc35f3a0d9c
 _md5_=c5c2c58227c6358a620f36a7f0e229cd

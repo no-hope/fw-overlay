@@ -9,5 +9,5 @@ RDEPEND=>=virtual/jdk-1.6
 RESTRICT=strip mirror
 SLOT=0
 SRC_URI=http://download.jetbrains.com/rider/JetBrains.Rider-2019.3.4.tar.gz -> rider-2019.3.4.193.6494.48.tar.gz
-_eclasses_=desktop	c0d27bf73aa08ca05b663dbd31fbef28	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	dab5d8ec471d025b79c9e6906bcf3bff	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c
+_eclasses_=desktop	22952d8f27cac191d75529d4c38e6bfa	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	8f942ebdcf04334697649d4a0bf65a32	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c
 _md5_=bd2a923e2dae40de1b8887dd158eb57b

@@ -9,5 +9,5 @@ RDEPEND=>=virtual/jdk-1.6
 RESTRICT=strip mirror
 SLOT=0
 SRC_URI=https://download.jetbrains.com/cpp/CLion-2019.3.5.tar.gz -> clion-2019.3.5.193.6911.21.tar.gz
-_eclasses_=desktop	c0d27bf73aa08ca05b663dbd31fbef28	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	dab5d8ec471d025b79c9e6906bcf3bff	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c
+_eclasses_=desktop	22952d8f27cac191d75529d4c38e6bfa	edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	8f942ebdcf04334697649d4a0bf65a32	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c
 _md5_=9ab57eb265caae7659fd56ad50778c34

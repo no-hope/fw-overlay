@@ -1,0 +1,13 @@
+DEFINED_PHASES=install postinst postrm preinst
+DESCRIPTION=Sublime Text is a sophisticated text editor for code, html and prose
+EAPI=7
+HOMEPAGE=http://www.sublimetext.com
+INHERIT=eutils fwutils
+KEYWORDS=~amd64 ~x86
+LICENSE=Unlicense
+RDEPEND=x11-libs/gtk+:2
+RESTRICT=mirror
+SLOT=3
+SRC_URI=amd64? ( https://download.sublimetext.com/sublime_text_3_build_3211_x64.tar.bz2 -> sublime-text-3.3211_amd64.tar.bz2 ) x86? ( https://download.sublimetext.com/sublime_text_3_build_3211_x32.tar.bz2 -> sublime-text-3.3211_x86.tar.bz2 )
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	8f942ebdcf04334697649d4a0bf65a32	fwutils	86aa61eea0d6a01b4a176fedb922b8c6	gnome2-utils	2116cec8f46f4d1b0a88c5b1f1575dd3	multilib	5ca4e49abed8e3a2f7b56920eadee157	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	toolchain-funcs	1542e649be915f43f6908a9e93909961	wrapper	4a1902f969e5718126434fc35f3a0d9c	xdg-utils	fffb53a53cf17c9c0c998a3c0a590c7e
+_md5_=f9c10640b4278b849b230888e1af5f54
