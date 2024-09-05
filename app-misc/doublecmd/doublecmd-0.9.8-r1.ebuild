@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 
-inherit desktop eutils fwutils
+inherit desktop fwutils
 
 DESCRIPTION="Double Commander is a cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas."
 HOMEPAGE="http://doublecmd.sourceforge.net/"
