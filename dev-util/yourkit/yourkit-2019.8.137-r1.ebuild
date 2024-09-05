@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
-inherit eutils desktop
+EAPI=8
+inherit desktop
 
 SLOT="$(ver_cut 1)"
 RDEPEND=">=virtual/jdk-1.6"

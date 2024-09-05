@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
-inherit eutils user systemd
+EAPI=8
+inherit systemd
 MY_PV="${PV/_rc/.M}"
 
 DESCRIPTION="

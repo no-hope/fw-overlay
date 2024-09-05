@@ -1,6 +1,6 @@
-EAPI=7
+EAPI=8
 
-inherit eutils java-pkg-2
+inherit java-pkg-2
 
 DESCRIPTION="Diagram editor written in Java"
 HOMEPAGE="www.yworks.com/products/yed/"

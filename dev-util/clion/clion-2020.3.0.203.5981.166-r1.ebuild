@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-EAPI=7
-inherit eutils desktop
+EAPI=8
+inherit desktop
 
 SLOT="0"
 RDEPEND=">=virtual/jdk-1.6"
@@ -16,9 +16,13 @@ HOMEPAGE="https://www.jetbrains.com/clion/"
 MY_PN="CLion"
 SRC_URI="http://download.jetbrains.com/cpp/${MY_PN}-${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
 
-VER=($(ver_cut 1))
-if [[ "${VER[4]}" == "0" ]]; then
-    SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(ver_cut 1-2).tar.gz -> ${PN}-${PV}.tar.gz"
+VER=($(ver_rs 1- ' '))
+if [[ "${VER[2]}" == "0" ]]; then
+    if [[ "${VER[1]}" == "0" ]]; then
+        SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(ver_cut 1-1).tar.gz"
+    else
+        SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(ver_cut 1-2).tar.gz"
+    fi
 else
     SRC_URI="https://download.jetbrains.com/cpp/${MY_PN}-$(ver_cut 1-3).tar.gz -> ${PN}-${PV}.tar.gz"
 fi

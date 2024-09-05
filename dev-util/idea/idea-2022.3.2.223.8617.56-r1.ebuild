@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-EAPI=7
-inherit eutils desktop fwutils
+EAPI=8
+inherit desktop fwutils
 
 SLOT="$(ver_cut 1)"
 RDEPEND=">=virtual/jdk-1.7"
@@ -93,7 +93,7 @@ src_install() {
 
 	fperms 755 "${dir}/bin/${PN}.sh" || die
 	fperms 755 "${dir}/bin/fsnotifier" || die
-	fperms 755 "${dir}/bin/libdbm64.so" || die
+	fperms 755 "${dir}/bin/libdbm.so" || die
 
 	fperms -R 755 "${dir}"/jbr/bin/ || die
 	fperms 755 "${dir}"/jbr/lib/{jexec,jspawnhelper} || die

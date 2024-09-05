@@ -1,6 +1,6 @@
-EAPI=7
+EAPI=8
 
-inherit gnome2-utils eutils fwutils
+inherit gnome2-utils fwutils
 
 BUILDTAG=$(ver_cut 4-4)
 IUSE="ffmpeg nodejs java gzip android"
