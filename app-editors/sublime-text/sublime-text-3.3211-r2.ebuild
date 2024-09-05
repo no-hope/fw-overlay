@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 
-inherit eutils fwutils
+inherit fwutils
 
 DESCRIPTION="Sublime Text is a sophisticated text editor for code, html and prose"
 HOMEPAGE="http://www.sublimetext.com"
