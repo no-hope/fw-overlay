@@ -33,8 +33,8 @@ TMP_GENTOO="/tmp/fw-gentoo-$(date +%s)"
 mkdir -p "${TMP_GENTOO}"
 cd "${TMP_GENTOO}"
 
-wget http://distfiles.gentoo.org/releases/x86/autobuilds/latest-stage3-i686-openrc.txt
-wget http://distfiles.gentoo.org/releases/x86/autobuilds/$(tail -1 latest-stage3-i686-openrc.txt| awk '{print $1}') -O stage3.tar.bz2
+wget http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686-openrc/latest-stage3-i686-openrc.txt
+wget http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686-openrc/$(grep stage3-i686 latest-stage3-i686-openrc.txt| awk '{print $1}') -O stage3.tar.bz2
 mkdir gentoo
 
 echo "Unpacking stage3.tar.bz2..."
