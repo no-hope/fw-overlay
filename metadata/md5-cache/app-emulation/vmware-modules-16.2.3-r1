@@ -1,0 +1,16 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=compile install postinst postrm preinst prepare setup
+DEPEND=kernel_linux? ( sys-apps/kmod[tools] dist-kernel? ( virtual/dist-kernel:= ) ) kernel_linux? ( virtual/linux-sources virtual/libelf )
+DESCRIPTION=VMware kernel modules
+EAPI=8
+HOMEPAGE=https://github.com/mkubecek/vmware-host-modules
+INHERIT=flag-o-matic linux-info linux-mod udev
+IUSE=dist-kernel
+KEYWORDS=~* amd64
+LICENSE=GPL-2
+RDEPEND=kernel_linux? ( sys-apps/kmod[tools] dist-kernel? ( virtual/dist-kernel:= ) )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/mkubecek/vmware-host-modules/archive/w16.2.3-k5.16.zip -> vmware-modules-16.2.3-5.16.zip
+_eclasses_=flag-o-matic	e503ea5acc20410237ba33ec3f7c857d	linux-info	ea4122ba1d8791a12b78e53f9510a2e3	linux-mod	000f3723e8e062061ee523106e69f84a	multilib	c19072c3cd7ac5cb21de013f7e9832e0	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd	udev	eec0bbab06977f1cfc5597269c1fa152
+_md5_=e3364ec11edeb373824767726f4ba5f7

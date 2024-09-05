@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=The intelligent cross-platform C/C++ IDE
+EAPI=8
+HOMEPAGE=https://www.jetbrains.com/clion/
+INHERIT=desktop
+KEYWORDS=amd64
+LICENSE=CLion-IDEA
+RDEPEND=>=virtual/jdk-1.6
+RESTRICT=strip mirror
+SLOT=0
+SRC_URI=https://download.jetbrains.com/cpp/CLion-2020.3.tar.gz
+_eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d
+_md5_=6e4bde32ba1d01f19213203d1357a532

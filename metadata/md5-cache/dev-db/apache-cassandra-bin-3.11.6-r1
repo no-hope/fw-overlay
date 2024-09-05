@@ -1,0 +1,15 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=install prepare setup
+DEPEND=>=virtual/jdk-1.5
+DESCRIPTION=The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance.
+EAPI=8
+HOMEPAGE=http://cassandra.apache.org/
+INHERIT=systemd
+IUSE=systemd
+KEYWORDS=~x86 ~amd64
+LICENSE=Apache-2.0
+RDEPEND=>=virtual/jdk-1.5 systemd? ( sys-apps/systemd )
+SLOT=3.11
+SRC_URI=mirror://apache/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz
+_eclasses_=multilib	c19072c3cd7ac5cb21de013f7e9832e0	systemd	c8b03e8df84486aa991d4396686e8942	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd
+_md5_=2cff815b20fd1c46f184fae679765bc0

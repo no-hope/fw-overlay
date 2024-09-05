@@ -1,0 +1,11 @@
+DEFINED_PHASES=install postinst prepare setup
+DESCRIPTION=GlassFish is an open-source application server project for the Java EE platform
+EAPI=8
+HOMEPAGE=http://glassfish.java.net/
+KEYWORDS=x86 amd64
+LICENSE=GPL
+RDEPEND=>=virtual/jdk-1.6
+RESTRICT=mirror
+SLOT=0
+SRC_URI=http://download.java.net/glassfish/3.1.2.2/release/glassfish-3.1.2.2.zip
+_md5_=cfff9c42f4e64f10e0d18ce43bbbe702

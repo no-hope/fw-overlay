@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Java decompiler, inspired by (and borrowed heavily from) ILSpy and Mono.Cecil
+EAPI=8
+HOMEPAGE=https://github.com/mstrobel/procyon
+KEYWORDS=~x86 ~amd64
+RDEPEND=>=virtual/jdk-11
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/mstrobel/procyon/releases/download/v0.6.0/procyon-decompiler-0.6.0.jar -> procyon-0.6.0.jar
+_md5_=48b0639b2d93f51b586147bc5e7fd654

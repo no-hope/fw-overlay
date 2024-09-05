@@ -1,0 +1,16 @@
+BDEPEND=app-arch/unzip
+DEFINED_PHASES=compile configure install preinst prepare setup test
+DEPEND=dev-java/antlr:3 dev-java/netty:0 dev-java/asm:9 dev-java/commons-compress:0 dev-java/guava:0 dev-java/jffi:1.2 dev-java/jline:2 dev-java/icu4j:70 dev-java/jnr-constants:0 dev-java/jnr-posix:3.0 dev-java/jnr-netdb:1.0 dev-java/stringtemplate:0 dev-java/xerces:2 java-virtuals/servlet-api:3.0 >=virtual/jdk-1.8:* dev-java/ant-core:0 test? ( dev-java/junit:4 dev-java/ant-junit:0 ) >=dev-java/java-config-2.2.0-r3 source? ( app-arch/zip ) >=dev-java/ant-1.10.14-r2:0 dev-java/javatoolkit
+DESCRIPTION=An implementation of Python written in Java
+EAPI=8
+HOMEPAGE=https://www.jython.org
+INHERIT=java-pkg-2 java-ant-2 python-utils-r1 flag-o-matic
+IUSE=examples test doc source
+KEYWORDS=amd64 ~arm arm64 ppc64 x86 ~amd64-linux ~x86-linux
+LICENSE=PSF-2
+RDEPEND=dev-java/antlr:3 dev-java/netty:0 dev-java/asm:9 dev-java/commons-compress:0 dev-java/guava:0 dev-java/jffi:1.2 dev-java/jline:2 dev-java/icu4j:70 dev-java/jnr-constants:0 dev-java/jnr-posix:3.0 dev-java/jnr-netdb:1.0 dev-java/stringtemplate:0 dev-java/xerces:2 java-virtuals/servlet-api:3.0 >=virtual/jre-1.8:* >=dev-java/java-config-2.2.0-r3 source? ( app-arch/zip )
+RESTRICT=test
+SLOT=2.7
+SRC_URI=https://search.maven.org/remotecontent?filepath=org/python/jython/2.7.0/jython-2.7.0-sources.jar
+_eclasses_=flag-o-matic	e503ea5acc20410237ba33ec3f7c857d	java-ant-2	ad653f6ce057f94c49254ace4f0f8335	java-pkg-2	9076f1296e19e8cc3f51e613f5fddbf5	java-utils-2	868752320f3c0e66b5fa5dc3602d7486	multilib	c19072c3cd7ac5cb21de013f7e9832e0	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	python-utils-r1	6881b056477c23167d9a6b33e146374e	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd
+_md5_=8e59e417557a63b3487786c8dd475f29

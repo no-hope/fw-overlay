@@ -1,0 +1,14 @@
+DEFINED_PHASES=install postinst postrm preinst
+DESCRIPTION=Double Commander is a cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
+EAPI=8
+HOMEPAGE=http://doublecmd.sourceforge.net/
+INHERIT=desktop fwutils
+IUSE=qt5 -gtk2
+KEYWORDS=amd64 ~x86
+LICENSE=GPL
+RDEPEND=gtk2? ( x11-libs/gtk+:2 ) qt5? ( dev-qt/qtgui:5 )
+REQUIRED_USE=^^ ( gtk2 qt5 )
+SLOT=0
+SRC_URI=amd64? ( qt5? ( mirror://sourceforge/doublecmd/doublecmd-0.9.8.qt5.x86_64.tar.xz ) gtk2? ( mirror://sourceforge/doublecmd/doublecmd-0.9.8.gtk2.x86_64.tar.xz ) ) x86? ( qt5? ( mirror://sourceforge/doublecmd/doublecmd-0.9.8.qt5.i386.tar.xz ) gtk2? ( mirror://sourceforge/doublecmd/doublecmd-0.9.8.gtk2.i386.tar.xz ) )
+_eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d	fwutils	27f40f2ae6ab3f55db66c64e1d3539b5	gnome2-utils	a8cf148ec7f5ae0b1f1d33ae5f7f9e88	multilib	c19072c3cd7ac5cb21de013f7e9832e0	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd	xdg-utils	baea6080dd821f5562d715887954c9d3
+_md5_=32dda96850c999c91d5c82574be796f3

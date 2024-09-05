@@ -1,0 +1,13 @@
+DEFINED_PHASES=install prepare
+DESCRIPTION=JProfiler java profiling tool
+EAPI=8
+HOMEPAGE=http://www.ej-technologies.com/products/jprofiler/overview.html
+INHERIT=desktop
+KEYWORDS=amd64
+LICENSE=jprofiler
+RDEPEND=>=virtual/jdk-1.6
+RESTRICT=strip
+SLOT=10.1
+SRC_URI=http://download-gcdn.ej-technologies.com/jprofiler/jprofiler_linux_10_1_5.tar.gz
+_eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d
+_md5_=418ff5dc729db4e34be89a85105ab3c5

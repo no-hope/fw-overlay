@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=GUI for Perforce version control system
+EAPI=8
+HOMEPAGE=http://www.perforce.com/
+IUSE=gtk
+KEYWORDS=-* ~x86 amd64
+LICENSE=perforce
+RESTRICT=mirror strip test
+SLOT=0
+SRC_URI=amd64? ( http://ftp.perforce.com/perforce/r19.2/bin.linux26x86_64/p4v.tgz -> perforce-gui-2019.2.1904275-r1-amd64.tgz )
+_md5_=890ccf2491464cb1cf7236b77d5577d9

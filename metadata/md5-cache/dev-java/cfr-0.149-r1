@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=CFR - another java decompiler
+EAPI=8
+HOMEPAGE=http://www.benf.org/other/cfr/
+KEYWORDS=~x86 amd64
+RDEPEND=>=virtual/jdk-1.7
+RESTRICT=mirror
+SLOT=0
+SRC_URI=http://www.benf.org/other/cfr/cfr_0_149.jar -> cfr-0.149.jar
+_md5_=63c368dfa4422a6de980968d44c113dd

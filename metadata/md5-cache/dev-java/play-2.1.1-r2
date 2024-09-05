@@ -1,0 +1,12 @@
+DEFINED_PHASES=install setup
+DEPEND=>=virtual/jdk-1.6
+DESCRIPTION=The High Velocity Web Framework For Java and Scala
+EAPI=8
+HOMEPAGE=http://www.playframework.com/
+KEYWORDS=amd64 ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos
+LICENSE=Apache-2.0
+RDEPEND=>=virtual/jre-1.6
+RESTRICT=mirror
+SLOT=2
+SRC_URI=http://downloads.typesafe.com/play/2.1.1/play-2.1.1.zip
+_md5_=3d9e57987d65e078753e8b584a528576

@@ -1,0 +1,13 @@
+DEFINED_PHASES=install
+DESCRIPTION=YourKit java profiling tool
+EAPI=8
+HOMEPAGE=http://www.yourkit.com/download/
+INHERIT=desktop
+KEYWORDS=~x86 amd64
+LICENSE=yourkit
+RDEPEND=>=virtual/jdk-1.6
+RESTRICT=strip
+SLOT=2019
+SRC_URI=https://www.yourkit.com/download/YourKit-JavaProfiler-2019.8-b137.zip
+_eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d
+_md5_=d03a7ec552dcfa6609d78e325647bb83

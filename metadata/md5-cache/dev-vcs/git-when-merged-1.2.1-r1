@@ -1,13 +1,11 @@
-BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=install unpack
+DEFINED_PHASES=install
 DESCRIPTION=Find when a commit was merged into one or more branches.
 EAPI=8
 HOMEPAGE=https://github.com/mhagger/git-when-merged
-INHERIT=git-r3
+KEYWORDS=amd64 x86
 LICENSE=GPL-2
-PROPERTIES=live
 RDEPEND=>=dev-vcs/git-2.3.6
 RESTRICT=mirror
 SLOT=0
-_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
+SRC_URI=https://github.com/mhagger/git-when-merged/archive/refs/tags/v1.2.1.tar.gz -> git-when-merged-1.2.1.tar.gz
 _md5_=9e11a1623c6ae738fd25e5534ab49086
