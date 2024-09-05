@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
-inherit eutils user systemd
+EAPI=8
+inherit systemd
 
 DESCRIPTION="Multi-Model Open Source NoSQL DBMS that combines the power of graphs and the flexibility of documents into one scalable, high-performance operational database."
 HOMEPAGE="http://www.orientechnologies.com"
