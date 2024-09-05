@@ -1,6 +1,4 @@
-EAPI=7
-
-inherit eutils
+EAPI=8
 
 DESCRIPTION="GlassFish is an open-source application server project for the Java EE platform"
 HOMEPAGE="http://glassfish.java.net/"
