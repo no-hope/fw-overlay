@@ -1,7 +1,7 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit eutils gnome2-utils
+inherit gnome2-utils
 
 # @FUNCTION: fw_make_desktop_entry
 # @USAGE: fw_make_desktop_entry(<command>, [name], [icon], [type], [desktop_override], [fields])
