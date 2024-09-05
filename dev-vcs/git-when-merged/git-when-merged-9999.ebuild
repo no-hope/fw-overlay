@@ -2,10 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 PYTHON_COMPAT=( python2_7 python3_{10,11,12} )
-
-inherit eutils
 
 DESCRIPTION="Find when a commit was merged into one or more branches."
 HOMEPAGE="https://github.com/mhagger/git-when-merged"
