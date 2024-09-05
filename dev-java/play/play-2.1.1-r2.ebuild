@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
-
-inherit eutils
+EAPI=8
 
 DESCRIPTION="The High Velocity Web Framework For Java and Scala"
 HOMEPAGE="http://www.playframework.com/"

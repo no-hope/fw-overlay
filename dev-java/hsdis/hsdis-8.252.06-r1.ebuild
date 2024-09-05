@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
-inherit eutils
+EAPI=8
 
 DESCRIPTION="Basic disassembler plugin for HotSpot"
 HOMEPAGE="https://kenai.com/projects/base-hsdis/"

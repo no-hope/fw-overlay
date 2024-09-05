@@ -1,9 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-EAPI=7
-
-inherit eutils
+EAPI=8
 
 SLOT="0"
 RDEPEND=">=virtual/jdk-1.6"

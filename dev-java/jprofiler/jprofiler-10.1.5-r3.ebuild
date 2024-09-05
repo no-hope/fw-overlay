@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
-inherit eutils desktop
+EAPI=8
+inherit desktop
 
 SLOT="$(ver_cut 1-2)"
 RDEPEND=">=virtual/jdk-1.6"
@@ -17,7 +17,7 @@ LICENSE="jprofiler"
 IUSE=""
 KEYWORDS="amd64"
 MV="$(ver_cut 1)"
-S="${WORKDIR}/jprofiler${MV}"
+S="${WORKDIR}/jprofiler${PV}"
 INSTALL_DIR="/opt/${PN}-${PV}"
 
 QA_TEXTRELS="opt/${PN}-${PV}/bin/*/libjprofilerti.so"
